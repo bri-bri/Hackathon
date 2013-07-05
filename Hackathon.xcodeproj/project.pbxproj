@@ -148,6 +148,20 @@
 		137C55CE17872A2400DDBA53 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137C55CC17872A2400DDBA53 /* ViewController.xib */; };
 		137C55D217872AEA00DDBA53 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55D017872AEA00DDBA53 /* StoreViewController.m */; };
 		137C55D317872AEA00DDBA53 /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137C55D117872AEA00DDBA53 /* StoreViewController.xib */; };
+		137C55D817874A8600DDBA53 /* HackBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55D717874A8600DDBA53 /* HackBoard.m */; };
+		137C55DB17874A9600DDBA53 /* HackTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55DA17874A9600DDBA53 /* HackTile.m */; };
+		137C55DE17874AAD00DDBA53 /* HackLetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55DD17874AAD00DDBA53 /* HackLetter.m */; };
+		137C55E117874ABF00DDBA53 /* HackEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55E017874ABF00DDBA53 /* HackEnemy.m */; };
+		137C55E417874B2200DDBA53 /* HackProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55E317874B2200DDBA53 /* HackProjectile.m */; };
+		137C55E717874B4000DDBA53 /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55E617874B4000DDBA53 /* GameLogic.m */; };
+		137C55EB17874BF300DDBA53 /* HackTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55EA17874BF300DDBA53 /* HackTileView.m */; };
+		137C55EE17874C0800DDBA53 /* HackLetterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55ED17874C0800DDBA53 /* HackLetterView.m */; };
+		137C55F117874C1E00DDBA53 /* HackProjectileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55F017874C1E00DDBA53 /* HackProjectileView.m */; };
+		137C55F417874CAC00DDBA53 /* HackEnemyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55F317874CAB00DDBA53 /* HackEnemyView.m */; };
+		137C55F717874CC500DDBA53 /* HackBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55F617874CC500DDBA53 /* HackBoardView.m */; };
+		137C55FA17874F1F00DDBA53 /* HackStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55F917874F1F00DDBA53 /* HackStatusView.m */; };
+		137C55FE17875F0700DDBA53 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55FC17875F0700DDBA53 /* ResultsViewController.m */; };
+		137C55FF17875F0700DDBA53 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137C55FD17875F0700DDBA53 /* ResultsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -455,6 +469,33 @@
 		137C55CF17872AEA00DDBA53 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreViewController.h; path = Views/StoreViewController.h; sourceTree = "<group>"; };
 		137C55D017872AEA00DDBA53 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreViewController.m; path = Views/StoreViewController.m; sourceTree = "<group>"; };
 		137C55D117872AEA00DDBA53 /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreViewController.xib; path = Views/StoreViewController.xib; sourceTree = "<group>"; };
+		137C55D617874A8600DDBA53 /* HackBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackBoard.h; path = Models/HackBoard.h; sourceTree = "<group>"; };
+		137C55D717874A8600DDBA53 /* HackBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackBoard.m; path = Models/HackBoard.m; sourceTree = "<group>"; };
+		137C55D917874A9600DDBA53 /* HackTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackTile.h; path = Models/HackTile.h; sourceTree = "<group>"; };
+		137C55DA17874A9600DDBA53 /* HackTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackTile.m; path = Models/HackTile.m; sourceTree = "<group>"; };
+		137C55DC17874AAD00DDBA53 /* HackLetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackLetter.h; path = Models/HackLetter.h; sourceTree = "<group>"; };
+		137C55DD17874AAD00DDBA53 /* HackLetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackLetter.m; path = Models/HackLetter.m; sourceTree = "<group>"; };
+		137C55DF17874ABF00DDBA53 /* HackEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackEnemy.h; sourceTree = "<group>"; };
+		137C55E017874ABF00DDBA53 /* HackEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackEnemy.m; sourceTree = "<group>"; };
+		137C55E217874B2200DDBA53 /* HackProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackProjectile.h; path = Models/HackProjectile.h; sourceTree = "<group>"; };
+		137C55E317874B2200DDBA53 /* HackProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackProjectile.m; path = Models/HackProjectile.m; sourceTree = "<group>"; };
+		137C55E517874B4000DDBA53 /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLogic.h; sourceTree = "<group>"; };
+		137C55E617874B4000DDBA53 /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLogic.m; sourceTree = "<group>"; };
+		137C55E917874BF300DDBA53 /* HackTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTileView.h; sourceTree = "<group>"; };
+		137C55EA17874BF300DDBA53 /* HackTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackTileView.m; sourceTree = "<group>"; };
+		137C55EC17874C0800DDBA53 /* HackLetterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackLetterView.h; sourceTree = "<group>"; };
+		137C55ED17874C0800DDBA53 /* HackLetterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackLetterView.m; sourceTree = "<group>"; };
+		137C55EF17874C1E00DDBA53 /* HackProjectileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackProjectileView.h; sourceTree = "<group>"; };
+		137C55F017874C1E00DDBA53 /* HackProjectileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackProjectileView.m; sourceTree = "<group>"; };
+		137C55F217874CAB00DDBA53 /* HackEnemyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackEnemyView.h; sourceTree = "<group>"; };
+		137C55F317874CAB00DDBA53 /* HackEnemyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackEnemyView.m; sourceTree = "<group>"; };
+		137C55F517874CC500DDBA53 /* HackBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackBoardView.h; sourceTree = "<group>"; };
+		137C55F617874CC500DDBA53 /* HackBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackBoardView.m; sourceTree = "<group>"; };
+		137C55F817874F1F00DDBA53 /* HackStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackStatusView.h; sourceTree = "<group>"; };
+		137C55F917874F1F00DDBA53 /* HackStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackStatusView.m; sourceTree = "<group>"; };
+		137C55FB17875F0700DDBA53 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Views/ResultsViewController.h; sourceTree = "<group>"; };
+		137C55FC17875F0700DDBA53 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Views/ResultsViewController.m; sourceTree = "<group>"; };
+		137C55FD17875F0700DDBA53 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Views/ResultsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -527,6 +568,9 @@
 		137C52A61787290B00DDBA53 /* Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				137C55E817874B6A00DDBA53 /* CCViews */,
+				137C55D517874A1E00DDBA53 /* Controllers */,
+				137C55D41787497600DDBA53 /* Models */,
 				137C55C917872A0700DDBA53 /* Views */,
 				137C54371787290E00DDBA53 /* AppDelegate.h */,
 				137C54381787290E00DDBA53 /* AppDelegate.m */,
@@ -949,8 +993,56 @@
 				137C55CF17872AEA00DDBA53 /* StoreViewController.h */,
 				137C55D017872AEA00DDBA53 /* StoreViewController.m */,
 				137C55D117872AEA00DDBA53 /* StoreViewController.xib */,
+				137C55FB17875F0700DDBA53 /* ResultsViewController.h */,
+				137C55FC17875F0700DDBA53 /* ResultsViewController.m */,
+				137C55FD17875F0700DDBA53 /* ResultsViewController.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		137C55D41787497600DDBA53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				137C55D617874A8600DDBA53 /* HackBoard.h */,
+				137C55D717874A8600DDBA53 /* HackBoard.m */,
+				137C55D917874A9600DDBA53 /* HackTile.h */,
+				137C55DA17874A9600DDBA53 /* HackTile.m */,
+				137C55DC17874AAD00DDBA53 /* HackLetter.h */,
+				137C55DD17874AAD00DDBA53 /* HackLetter.m */,
+				137C55DF17874ABF00DDBA53 /* HackEnemy.h */,
+				137C55E017874ABF00DDBA53 /* HackEnemy.m */,
+				137C55E217874B2200DDBA53 /* HackProjectile.h */,
+				137C55E317874B2200DDBA53 /* HackProjectile.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		137C55D517874A1E00DDBA53 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				137C55E517874B4000DDBA53 /* GameLogic.h */,
+				137C55E617874B4000DDBA53 /* GameLogic.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		137C55E817874B6A00DDBA53 /* CCViews */ = {
+			isa = PBXGroup;
+			children = (
+				137C55E917874BF300DDBA53 /* HackTileView.h */,
+				137C55EA17874BF300DDBA53 /* HackTileView.m */,
+				137C55EC17874C0800DDBA53 /* HackLetterView.h */,
+				137C55ED17874C0800DDBA53 /* HackLetterView.m */,
+				137C55EF17874C1E00DDBA53 /* HackProjectileView.h */,
+				137C55F017874C1E00DDBA53 /* HackProjectileView.m */,
+				137C55F217874CAB00DDBA53 /* HackEnemyView.h */,
+				137C55F317874CAB00DDBA53 /* HackEnemyView.m */,
+				137C55F517874CC500DDBA53 /* HackBoardView.h */,
+				137C55F617874CC500DDBA53 /* HackBoardView.m */,
+				137C55F817874F1F00DDBA53 /* HackStatusView.h */,
+				137C55F917874F1F00DDBA53 /* HackStatusView.m */,
+			);
+			name = CCViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1035,6 +1127,7 @@
 				137C52BE1787290B00DDBA53 /* iTunesArtwork in Resources */,
 				137C55CE17872A2400DDBA53 /* ViewController.xib in Resources */,
 				137C55D317872AEA00DDBA53 /* StoreViewController.xib in Resources */,
+				137C55FF17875F0700DDBA53 /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,6 +1144,19 @@
 				137C543F1787290E00DDBA53 /* GameLayer.m in Sources */,
 				137C55CD17872A2400DDBA53 /* ViewController.m in Sources */,
 				137C55D217872AEA00DDBA53 /* StoreViewController.m in Sources */,
+				137C55D817874A8600DDBA53 /* HackBoard.m in Sources */,
+				137C55DB17874A9600DDBA53 /* HackTile.m in Sources */,
+				137C55DE17874AAD00DDBA53 /* HackLetter.m in Sources */,
+				137C55E117874ABF00DDBA53 /* HackEnemy.m in Sources */,
+				137C55E417874B2200DDBA53 /* HackProjectile.m in Sources */,
+				137C55E717874B4000DDBA53 /* GameLogic.m in Sources */,
+				137C55EB17874BF300DDBA53 /* HackTileView.m in Sources */,
+				137C55EE17874C0800DDBA53 /* HackLetterView.m in Sources */,
+				137C55F117874C1E00DDBA53 /* HackProjectileView.m in Sources */,
+				137C55F417874CAC00DDBA53 /* HackEnemyView.m in Sources */,
+				137C55F717874CC500DDBA53 /* HackBoardView.m in Sources */,
+				137C55FA17874F1F00DDBA53 /* HackStatusView.m in Sources */,
+				137C55FE17875F0700DDBA53 /* ResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,6 +1435,7 @@
 				137C54441787290E00DDBA53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		137C54521787293200DDBA53 /* Build configuration list for PBXNativeTarget "cocos2d-library" */ = {
 			isa = XCConfigurationList;
@@ -1337,6 +1444,7 @@
 				137C54541787293200DDBA53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
