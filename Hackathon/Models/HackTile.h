@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "HackLetter.h"
+#import "HackTileCoord.h"
 
 @interface HackTile : NSObject {
     NSNumber* scoreMultiplier;
     HackLetter* hackLetter;
+    HackTileCoord* myGridCoord;
 }
 
 @property NSNumber* scoreMultiplier;
 @property HackLetter* hackLetter;
+@property HackTileCoord* myGridCoord;
 
 @end

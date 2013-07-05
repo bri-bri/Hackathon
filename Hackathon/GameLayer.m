@@ -44,7 +44,8 @@
 		CCSprite *background;
 		
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-			background = [CCSprite spriteWithFile:@"Default.png"];
+			//background = [CCSprite spriteWithFile:@"Default.png"];
+            background = [CCSprite spriteWithFile:@"texture_plaster_blue_color_background_160712_zeusbox_com-2560x1600.jpg"];
 			background.rotation = 0;
 		} else {
 			background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
@@ -53,6 +54,10 @@
 
 		// add the label as a child to this Layer
 		[self addChild: background];
+        
+        myBoard = [[HackBoard alloc] init];
+        
+        [myBoard setupBoard:self];
 	}
 	
 	return self;
@@ -61,6 +66,7 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+	//[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+    
 }
 @end

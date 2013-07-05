@@ -162,6 +162,14 @@
 		137C55FA17874F1F00DDBA53 /* HackStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55F917874F1F00DDBA53 /* HackStatusView.m */; };
 		137C55FE17875F0700DDBA53 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55FC17875F0700DDBA53 /* ResultsViewController.m */; };
 		137C55FF17875F0700DDBA53 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137C55FD17875F0700DDBA53 /* ResultsViewController.xib */; };
+		379D751217877B1300E288E2 /* HackTileCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D750F17877B1300E288E2 /* HackTileCoord.m */; };
+		379D751317877B1300E288E2 /* HackTray.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D751117877B1300E288E2 /* HackTray.m */; };
+		379D751617877C6100E288E2 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D751417877C6100E288E2 /* tile.png */; };
+		379D751717877C6100E288E2 /* tilebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D751517877C6100E288E2 /* tilebackground.png */; };
+		379D751C17877FD100E288E2 /* blue-background-textures-s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 379D751817877FD100E288E2 /* blue-background-textures-s.jpg */; };
+		379D751D17877FD100E288E2 /* scratched-texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 379D751917877FD100E288E2 /* scratched-texture.jpg */; };
+		379D751E17877FD100E288E2 /* texture_plaster_blue_color_background_160712_zeusbox_com-2560x1600.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 379D751A17877FD100E288E2 /* texture_plaster_blue_color_background_160712_zeusbox_com-2560x1600.jpg */; };
+		379D751F17877FD100E288E2 /* tilebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D751B17877FD100E288E2 /* tilebg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -496,6 +504,16 @@
 		137C55FB17875F0700DDBA53 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Views/ResultsViewController.h; sourceTree = "<group>"; };
 		137C55FC17875F0700DDBA53 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Views/ResultsViewController.m; sourceTree = "<group>"; };
 		137C55FD17875F0700DDBA53 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Views/ResultsViewController.xib; sourceTree = "<group>"; };
+		379D750E17877B1300E288E2 /* HackTileCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTileCoord.h; sourceTree = "<group>"; };
+		379D750F17877B1300E288E2 /* HackTileCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackTileCoord.m; sourceTree = "<group>"; };
+		379D751017877B1300E288E2 /* HackTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTray.h; sourceTree = "<group>"; };
+		379D751117877B1300E288E2 /* HackTray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackTray.m; sourceTree = "<group>"; };
+		379D751417877C6100E288E2 /* tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile.png; sourceTree = "<group>"; };
+		379D751517877C6100E288E2 /* tilebackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilebackground.png; sourceTree = "<group>"; };
+		379D751817877FD100E288E2 /* blue-background-textures-s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blue-background-textures-s.jpg"; sourceTree = "<group>"; };
+		379D751917877FD100E288E2 /* scratched-texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "scratched-texture.jpg"; sourceTree = "<group>"; };
+		379D751A17877FD100E288E2 /* texture_plaster_blue_color_background_160712_zeusbox_com-2560x1600.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "texture_plaster_blue_color_background_160712_zeusbox_com-2560x1600.jpg"; sourceTree = "<group>"; };
+		379D751B17877FD100E288E2 /* tilebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilebg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +549,7 @@
 		137C52861787290B00DDBA53 = {
 			isa = PBXGroup;
 			children = (
+				379D750B17877AEE00E288E2 /* assets */,
 				137C54561787297D00DDBA53 /* libs */,
 				137C52A61787290B00DDBA53 /* Hackathon */,
 				137C544B1787293200DDBA53 /* cocos2d-library */,
@@ -1003,6 +1022,10 @@
 		137C55D41787497600DDBA53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				379D750E17877B1300E288E2 /* HackTileCoord.h */,
+				379D750F17877B1300E288E2 /* HackTileCoord.m */,
+				379D751017877B1300E288E2 /* HackTray.h */,
+				379D751117877B1300E288E2 /* HackTray.m */,
 				137C55D617874A8600DDBA53 /* HackBoard.h */,
 				137C55D717874A8600DDBA53 /* HackBoard.m */,
 				137C55D917874A9600DDBA53 /* HackTile.h */,
@@ -1043,6 +1066,20 @@
 				137C55F917874F1F00DDBA53 /* HackStatusView.m */,
 			);
 			name = CCViews;
+			sourceTree = "<group>";
+		};
+		379D750B17877AEE00E288E2 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				379D751817877FD100E288E2 /* blue-background-textures-s.jpg */,
+				379D751917877FD100E288E2 /* scratched-texture.jpg */,
+				379D751A17877FD100E288E2 /* texture_plaster_blue_color_background_160712_zeusbox_com-2560x1600.jpg */,
+				379D751B17877FD100E288E2 /* tilebg.png */,
+				379D751417877C6100E288E2 /* tile.png */,
+				379D751517877C6100E288E2 /* tilebackground.png */,
+			);
+			name = assets;
+			path = Hackathon/assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1128,6 +1165,12 @@
 				137C55CE17872A2400DDBA53 /* ViewController.xib in Resources */,
 				137C55D317872AEA00DDBA53 /* StoreViewController.xib in Resources */,
 				137C55FF17875F0700DDBA53 /* ResultsViewController.xib in Resources */,
+				379D751617877C6100E288E2 /* tile.png in Resources */,
+				379D751717877C6100E288E2 /* tilebackground.png in Resources */,
+				379D751C17877FD100E288E2 /* blue-background-textures-s.jpg in Resources */,
+				379D751D17877FD100E288E2 /* scratched-texture.jpg in Resources */,
+				379D751E17877FD100E288E2 /* texture_plaster_blue_color_background_160712_zeusbox_com-2560x1600.jpg in Resources */,
+				379D751F17877FD100E288E2 /* tilebg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,6 +1200,8 @@
 				137C55F717874CC500DDBA53 /* HackBoardView.m in Sources */,
 				137C55FA17874F1F00DDBA53 /* HackStatusView.m in Sources */,
 				137C55FE17875F0700DDBA53 /* ResultsViewController.m in Sources */,
+				379D751217877B1300E288E2 /* HackTileCoord.m in Sources */,
+				379D751317877B1300E288E2 /* HackTray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

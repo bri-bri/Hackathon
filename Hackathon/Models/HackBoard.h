@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class GameLayer;
+
 @interface HackBoard : NSObject {
-    NSArray* tiles;
+    NSMutableArray* tiles;
 }
 
 @property NSArray* tiles;
 
+- (id)init;
+
+- (void)setupBoard:(GameLayer*) gLayer;
+
+- (NSArray*)getPath:(NSArray*)board sRow:(int)sR sCol:(int)sC eRow:(int)eR eCol:(int)eC;
 
 @end
