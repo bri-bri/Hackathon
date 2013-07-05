@@ -58,6 +58,10 @@
         myBoard = [[HackBoard alloc] init];
         
         [myBoard setupBoard:self];
+        
+        myTray = [[HackTray alloc] init];
+        
+        [myTray setupTray:self];
 	}
 	
 	return self;

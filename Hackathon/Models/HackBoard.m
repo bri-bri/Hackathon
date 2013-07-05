@@ -71,7 +71,6 @@
             spriteToAdd.position = ccp(xLoc, yLoc);
             [gLayer addChild:spriteToAdd];
              */
-
         }
     }
 }

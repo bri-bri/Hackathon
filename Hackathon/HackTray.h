@@ -14,11 +14,18 @@
 
 @interface HackTray : NSObject
 {
+    float               anchorX;
+    float               anchorY;
     NSMutableArray*     handLetters;
     NSMutableArray*     handPowerUps;
+    
 }
 
+@property float anchorX;
+@property float anchorY;
 @property NSMutableArray* handLetters;
 @property NSMutableArray* handPowerUps;
+
+- (void)setupTray:(GameLayer*) gLayer;
 
 @end
