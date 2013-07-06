@@ -12,12 +12,14 @@
 
 @interface HackTile : NSObject {
     NSNumber* scoreMultiplier;
-    HackLetter* hackLetter;
+    HackLetter* myHackLetter;
     HackTileCoord* myGridCoord;
 }
 
 @property NSNumber* scoreMultiplier;
-@property HackLetter* hackLetter;
+@property HackLetter* myHackLetter;
 @property HackTileCoord* myGridCoord;
+
+-(id)init;
 
 @end

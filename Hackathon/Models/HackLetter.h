@@ -6,15 +6,19 @@
 //  Copyright (c) 2013 Chartboost. All rights reserved.
 //
 
+#import "cocos2d.h"
+
 #import <Foundation/Foundation.h>
 
 @interface HackLetter : NSObject {
     NSString* letter;
-    NSString* type;
+    NSString* type; //type of attack
     NSInteger* damage;
     NSNumber* speed; // fire rate
     NSNumber* range; // distance that can be fired
-    NSDictionary* boosts; //a list of all boosts that have been applied to this letter
+    NSMutableDictionary* boosts; //a list of all boosts that have been applied to this letter
+    
+    CCSprite* mySprite;
 }
 
 @property NSString* letter;
@@ -22,6 +26,9 @@
 @property NSInteger* damage;
 @property NSNumber* speed;
 @property NSNumber* range;
-@property  NSDictionary* boosts;
+@property  NSMutableDictionary* boosts;
+@property  CCSprite* mySprite;
+
+-(void)randomizeLetter;
 
 @end

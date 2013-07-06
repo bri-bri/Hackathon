@@ -8,6 +8,8 @@
 
 #import "cocos2d.h"
 
+#include <stdlib.h>
+
 #import "AppDelegate.h"
 #import "GameLayer.h"
 #import "ViewController.h"

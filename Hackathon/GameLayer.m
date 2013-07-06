@@ -62,6 +62,8 @@
         myTray = [[HackTray alloc] init];
         
         [myTray setupTray:self];
+        
+        [myTray fillHandLetters];
 	}
 	
 	return self;
@@ -71,6 +73,5 @@
 {
 	[super onEnter];
 	//[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
-    
 }
 @end

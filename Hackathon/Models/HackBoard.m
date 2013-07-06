@@ -52,13 +52,13 @@
         [tiles addObject: [[NSMutableArray alloc] initWithCapacity:10]];
         for(int j = 0; j < 8; j++)
         {
-            HackTile* tileToAdd = [[HackTile alloc] init];
+            //HackTile* tileToAdd = [[HackTile alloc] init];
             HackTileCoord* toAdd = [[HackTileCoord alloc] init];
             toAdd.row = i;
             toAdd.col = j;
             toAdd.value = 0;
-            tileToAdd.myGridCoord = toAdd;
-            [[tiles objectAtIndex:i] addObject:tileToAdd];
+            //tileToAdd.myGridCoord = toAdd;
+            [[tiles objectAtIndex:i] addObject:toAdd];
             /*
             CCSprite *spriteToAdd = [CCSprite spriteWithFile:@"tilebackground.png"];
             

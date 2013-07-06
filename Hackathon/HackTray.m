@@ -10,6 +10,9 @@
 
 #import "HackTray.h"
 
+#import "HackTile.h"
+#import "HackLetter.h"
+
 #import "GameLayer.h"
 
 @implementation HackTray
@@ -19,6 +22,7 @@
     self = [super init];
     if(self)
     {
+        handLetters = [[NSMutableArray alloc] initWithCapacity:7];
     }
     return self;
 }
@@ -27,7 +31,8 @@
 {
     anchorX = 30;
     anchorY = 120;
-    
+    myGLayer = gLayer;
+    /*
     for(int i = 0; i < __MAX_HANDSIZE; i++)
     {
         CCSprite *spriteToAdd = [CCSprite spriteWithFile:@"tile.png"];
@@ -48,6 +53,55 @@
     
     spriteToAdd.position = ccp(xLoc, yLoc);
     [gLayer addChild:spriteToAdd];
+     */
+}
+
+- (void)emptyHandLetters
+{
+    [handLetters removeAllObjects];
+}
+
+- (void)emptyHandPowerUps
+{
+    [handPowerUps removeAllObjects];
+}
+
+- (void)fillHandLetters
+{
+    anchorX = 30;
+    anchorY = 120;
+    
+    while([handLetters count] < __MAX_HANDSIZE)
+    {
+        //get a random letter
+        
+        HackTile* toAdd = [[HackTile alloc] init];
+        
+        //add it
+        
+        [handLetters addObject:toAdd];
+        
+        int i = [handLetters count];
+        
+        NSLog(@"%d", i);
+    }
+    
+    for(int i = 0; i < [handLetters count]; i++)
+    {
+        HackTile* tempTile = ((HackTile*)[handLetters objectAtIndex:i]);
+        HackLetter* tempLetter = tempTile.myHackLetter;
+        CCSprite* tempSprite = tempLetter.mySprite;
+        
+        int xLoc = anchorX + tempSprite.contentSize.width/2;
+        int yLoc = anchorY - tempSprite.contentSize.height/2;
+        
+        xLoc += i * 40;
+        
+        tempSprite.position = ccp(xLoc, yLoc);
+        tempSprite.visible = YES;
+        
+        [myGLayer addChild:tempSprite];
+    }
 }
 
 @end
