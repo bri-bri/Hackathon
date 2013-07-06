@@ -16,7 +16,7 @@
 		137C529F1787290B00DDBA53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137C529E1787290B00DDBA53 /* Foundation.framework */; };
 		137C52A11787290B00DDBA53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137C52A01787290B00DDBA53 /* CoreGraphics.framework */; };
 		137C52A31787290B00DDBA53 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137C52A21787290B00DDBA53 /* CoreText.framework */; };
-		137C52A51787290B00DDBA53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137C52A41787290B00DDBA53 /* GameKit.framework */; };
+		137C52A51787290B00DDBA53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137C52A41787290B00DDBA53 /* GameKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		137C52A91787290B00DDBA53 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 137C52A81787290B00DDBA53 /* Default.png */; };
 		137C52AB1787290B00DDBA53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 137C52AA1787290B00DDBA53 /* Default@2x.png */; };
 		137C52AD1787290B00DDBA53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 137C52AC1787290B00DDBA53 /* Default-568h@2x.png */; };
@@ -162,6 +162,16 @@
 		137C55FA17874F1F00DDBA53 /* HackStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55F917874F1F00DDBA53 /* HackStatusView.m */; };
 		137C55FE17875F0700DDBA53 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137C55FC17875F0700DDBA53 /* ResultsViewController.m */; };
 		137C55FF17875F0700DDBA53 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137C55FD17875F0700DDBA53 /* ResultsViewController.xib */; };
+		137E0A6E1788B99100C5358A /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 137E0A6B1788B99100C5358A /* CustomCell.m */; };
+		137E0A6F1788B99100C5358A /* StoreTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137E0A6D1788B99100C5358A /* StoreTableView.m */; };
+		137E0A761788B9D800C5358A /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 137E0A721788B9D800C5358A /* CHANGELOG.md */; };
+		137E0A771788B9D800C5358A /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E0A741788B9D800C5358A /* libChartboost.a */; };
+		137E0A781788B9D800C5358A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 137E0A751788B9D800C5358A /* README.md */; };
+		137E0A7A1788BA0100C5358A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E0A791788BA0100C5358A /* SystemConfiguration.framework */; };
+		137E0A7C1788BA0700C5358A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E0A7B1788BA0700C5358A /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		137E0A7E1788BA2500C5358A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137E0A7D1788BA2500C5358A /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		137E0A801788BB3000C5358A /* StoreBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 137E0A7F1788BB3000C5358A /* StoreBG.png */; };
+		137E0A821788BB3700C5358A /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 137E0A811788BB3700C5358A /* BG.png */; };
 		379D751217877B1300E288E2 /* HackTileCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D750F17877B1300E288E2 /* HackTileCoord.m */; };
 		379D751317877B1300E288E2 /* HackTray.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D751117877B1300E288E2 /* HackTray.m */; };
 		379D751617877C6100E288E2 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D751417877C6100E288E2 /* tile.png */; };
@@ -531,6 +541,20 @@
 		137C55FB17875F0700DDBA53 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Views/ResultsViewController.h; sourceTree = "<group>"; };
 		137C55FC17875F0700DDBA53 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Views/ResultsViewController.m; sourceTree = "<group>"; };
 		137C55FD17875F0700DDBA53 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Views/ResultsViewController.xib; sourceTree = "<group>"; };
+		137E0A6A1788B99100C5358A /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		137E0A6B1788B99100C5358A /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		137E0A6C1788B99100C5358A /* StoreTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreTableView.h; sourceTree = "<group>"; };
+		137E0A6D1788B99100C5358A /* StoreTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreTableView.m; sourceTree = "<group>"; };
+		137E0A711788B9D800C5358A /* CBStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStore.h; sourceTree = "<group>"; };
+		137E0A721788B9D800C5358A /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		137E0A731788B9D800C5358A /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
+		137E0A741788B9D800C5358A /* libChartboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChartboost.a; sourceTree = "<group>"; };
+		137E0A751788B9D800C5358A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		137E0A791788BA0100C5358A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		137E0A7B1788BA0700C5358A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		137E0A7D1788BA2500C5358A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		137E0A7F1788BB3000C5358A /* StoreBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StoreBG.png; sourceTree = "<group>"; };
+		137E0A811788BB3700C5358A /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		379D750E17877B1300E288E2 /* HackTileCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTileCoord.h; sourceTree = "<group>"; };
 		379D750F17877B1300E288E2 /* HackTileCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackTileCoord.m; sourceTree = "<group>"; };
 		379D751017877B1300E288E2 /* HackTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTray.h; sourceTree = "<group>"; };
@@ -575,6 +599,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137E0A7E1788BA2500C5358A /* StoreKit.framework in Frameworks */,
+				137C52A51787290B00DDBA53 /* GameKit.framework in Frameworks */,
+				137E0A7C1788BA0700C5358A /* AdSupport.framework in Frameworks */,
+				137E0A7A1788BA0100C5358A /* SystemConfiguration.framework in Frameworks */,
 				137C54551787295B00DDBA53 /* libcocos2d-library.a in Frameworks */,
 				137C52931787290B00DDBA53 /* QuartzCore.framework in Frameworks */,
 				137C52951787290B00DDBA53 /* OpenGLES.framework in Frameworks */,
@@ -585,7 +613,7 @@
 				137C529F1787290B00DDBA53 /* Foundation.framework in Frameworks */,
 				137C52A11787290B00DDBA53 /* CoreGraphics.framework in Frameworks */,
 				137C52A31787290B00DDBA53 /* CoreText.framework in Frameworks */,
-				137C52A51787290B00DDBA53 /* GameKit.framework in Frameworks */,
+				137E0A771788B9D800C5358A /* libChartboost.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +631,10 @@
 		137C52861787290B00DDBA53 = {
 			isa = PBXGroup;
 			children = (
+				137E0A7D1788BA2500C5358A /* StoreKit.framework */,
+				137E0A7B1788BA0700C5358A /* AdSupport.framework */,
+				137E0A791788BA0100C5358A /* SystemConfiguration.framework */,
+				137E0A701788B9D800C5358A /* Chartboost */,
 				379D750B17877AEE00E288E2 /* assets */,
 				137C54561787297D00DDBA53 /* libs */,
 				137C52A61787290B00DDBA53 /* Hackathon */,
@@ -1060,6 +1092,7 @@
 		137C55C917872A0700DDBA53 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				137E0A691788B99100C5358A /* TableViews */,
 				137C55CA17872A2400DDBA53 /* ViewController.h */,
 				137C55CB17872A2400DDBA53 /* ViewController.m */,
 				137C55CC17872A2400DDBA53 /* ViewController.xib */,
@@ -1122,9 +1155,35 @@
 			name = CCViews;
 			sourceTree = "<group>";
 		};
+		137E0A691788B99100C5358A /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				137E0A6A1788B99100C5358A /* CustomCell.h */,
+				137E0A6B1788B99100C5358A /* CustomCell.m */,
+				137E0A6C1788B99100C5358A /* StoreTableView.h */,
+				137E0A6D1788B99100C5358A /* StoreTableView.m */,
+			);
+			name = TableViews;
+			path = Views/TableViews;
+			sourceTree = "<group>";
+		};
+		137E0A701788B9D800C5358A /* Chartboost */ = {
+			isa = PBXGroup;
+			children = (
+				137E0A711788B9D800C5358A /* CBStore.h */,
+				137E0A721788B9D800C5358A /* CHANGELOG.md */,
+				137E0A731788B9D800C5358A /* Chartboost.h */,
+				137E0A741788B9D800C5358A /* libChartboost.a */,
+				137E0A751788B9D800C5358A /* README.md */,
+			);
+			path = Chartboost;
+			sourceTree = "<group>";
+		};
 		379D750B17877AEE00E288E2 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				137E0A811788BB3700C5358A /* BG.png */,
+				137E0A7F1788BB3000C5358A /* StoreBG.png */,
 				379D7555178786AE00E288E2 /* Sprites.png */,
 				379D7520178786A600E288E2 /* Letters */,
 				379D751817877FD100E288E2 /* blue-background-textures-s.jpg */,
@@ -1287,6 +1346,10 @@
 				379D7553178786A600E288E2 /* Y.png in Resources */,
 				379D7554178786A600E288E2 /* Z.png in Resources */,
 				379D7556178786AE00E288E2 /* Sprites.png in Resources */,
+				137E0A761788B9D800C5358A /* CHANGELOG.md in Resources */,
+				137E0A781788B9D800C5358A /* README.md in Resources */,
+				137E0A801788BB3000C5358A /* StoreBG.png in Resources */,
+				137E0A821788BB3700C5358A /* BG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1318,6 +1381,8 @@
 				137C55FE17875F0700DDBA53 /* ResultsViewController.m in Sources */,
 				379D751217877B1300E288E2 /* HackTileCoord.m in Sources */,
 				379D751317877B1300E288E2 /* HackTray.m in Sources */,
+				137E0A6E1788B99100C5358A /* CustomCell.m in Sources */,
+				137E0A6F1788B99100C5358A /* StoreTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1491,6 +1556,10 @@
 				GCC_PREFIX_HEADER = Hackathon/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"Hackathon/libs/kazmath/include\"";
 				INFOPLIST_FILE = Hackathon/Resources/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Chartboost\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1511,6 +1580,10 @@
 				GCC_PREFIX_HEADER = Hackathon/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"Hackathon/libs/kazmath/include\"";
 				INFOPLIST_FILE = Hackathon/Resources/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Chartboost\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",

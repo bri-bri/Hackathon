@@ -27,6 +27,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    StoreTableView *storeView = [[StoreTableView alloc] init];
+    
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 520)];
+    backgroundView.autoresizesSubviews = YES;
+    backgroundView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    backgroundView.image = [UIImage imageNamed:@"BG.png"];
+    backgroundView.backgroundColor = [UIColor clearColor];
+    backgroundView.opaque = NO;
+    self.tableContainer.backgroundColor = [UIColor clearColor];
+    [self.tableContainer addSubview:storeView.view];
+    [self.view insertSubview:backgroundView belowSubview:self.tableContainer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,5 +49,9 @@
 
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)viewDidUnload {
+    [self setTableContainer:nil];
+    [super viewDidUnload];
 }
 @end
