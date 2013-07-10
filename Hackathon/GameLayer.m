@@ -18,6 +18,8 @@
 // HelloWorldLayer implementation
 @implementation GameLayer
 
+CCLabelTTF *killsCount;
+
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
 {
@@ -107,6 +109,16 @@
         possibleWord = [[NSMutableArray alloc] initWithCapacity:6];
         takenIndexes = [[NSMutableArray alloc] initWithCapacity:6];
         takenGridCoords = [[NSMutableArray alloc] initWithCapacity:6];
+
+        CCLabelTTF *killsLabel = [CCLabelTTF labelWithString:@"Kills: " fontName:@"Helvetica" fontSize:22.0f];
+        killsCount = [CCLabelTTF labelWithString:@"0" fontName:@"Helvetica" fontSize:22.0f];
+        float anchorX = 30;
+        float anchorY = 140;
+        
+        killsLabel.position = ccp(anchorX+killsLabel.boundingBox.size.width/2,anchorY);
+        killsCount.position = ccp(anchorX+killsLabel.boundingBox.size.width*1.5,anchorY);
+        [self addChild:killsLabel];
+        [self addChild:killsCount];
         
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 	}
@@ -426,5 +438,11 @@
         
         return YES;
     }
+}
+
+-(void) updateKills:(int)kills
+{
+    [killsCount setString:[NSString stringWithFormat:@"%d",kills]];
+    
 }
 @end

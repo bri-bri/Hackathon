@@ -43,4 +43,6 @@
 
 -(void)transitionToPlayingState;
 
+-(void)updateKills:(int)kills;
+
 @end

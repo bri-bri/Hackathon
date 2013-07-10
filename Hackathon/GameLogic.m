@@ -26,6 +26,8 @@
 @synthesize gameBullets;
 @synthesize gameLetters;
 
+int kills;
+
 -(id)init {
     if( (self=[super init]) ) {
         
@@ -38,6 +40,7 @@
         enemiesToSpawn = 0;
         spawnInterval = 1.5f;
         spawnTimer = 0.0f;
+        kills = 0;
     }
     return self;
 }
@@ -191,11 +194,14 @@
     {
         HackEnemy *nme = [gameEnemies objectAtIndex:i];
         if(nme.hp.integerValue <= 0){
+            if([gameEnemies objectAtIndex:i])
+                kills++;
             [gameEnemies removeObjectAtIndex:i];
             [myLayer removeChild:nme.mySprite cleanup:true];
         }
     
     }
+    [myLayer updateKills:kills];
     //spawn a new enemy?
     
     if(enemiesToSpawn > 0)
