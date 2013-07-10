@@ -19,6 +19,9 @@
     NSMutableArray*     handLetters;
     NSMutableArray*     handPowerUps;
     
+    NSMutableArray*     handLetterSprites;
+    NSMutableArray*     handPowerUpSprites;
+    
     GameLayer*          myGLayer;
 }
 
@@ -26,11 +29,19 @@
 @property float anchorY;
 @property NSMutableArray* handLetters;
 @property NSMutableArray* handPowerUps;
+@property NSMutableArray* handLetterSprites;
+@property NSMutableArray* handPowerUpSprites;
 
 - (void)setupTray:(GameLayer*) gLayer;
 
 - (void)emptyHandLetters;
 - (void)emptyHandPowerUps;
+
+
+- (void)showHandPowerUps;
+- (void)showHandLetters;
+
 - (void)fillHandLetters;
+- (void)fillHandPowerUps;
 
 @end

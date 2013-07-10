@@ -435,6 +435,22 @@ int storeViewTag;
     switch (success) {
         case kCBStorePurchaseStatusSuccessful:{
             
+            NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
+            NSMutableDictionary *purchasedItems = [userData objectForKey:@"items"];
+            
+            NSDictionary *saveItem = [weakSelf->purchaseItem copy];
+            NSNumber *amount = [NSNumber numberWithInt:0];
+            
+            if([purchasedItems objectForKey:saveItem[@"name"]])
+            {
+                amount = [purchasedItems objectForKey:saveItem[@"name"]][@"amount"];
+            }
+            
+            amount = [NSNumber numberWithInt:amount.intValue+1];
+            NSDictionary *theItem = [NSDictionary dictionaryWithObjects:@[amount,saveItem] forKeys:@[@"amount",@"item"]];
+            
+            [purchasedItems setValue:theItem forKey:weakSelf->purchaseItem[@"name"]];
+            NSLog(@"%@",purchasedItems);
             [self updateStoreItemsAnimated:YES];
             
         }break;
