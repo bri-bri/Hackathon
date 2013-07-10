@@ -28,6 +28,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    backgroundView.autoresizesSubviews = YES;
+    backgroundView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    backgroundView.image = [UIImage imageNamed:@"SplashScreen.png"];
+    backgroundView.backgroundColor = [UIColor clearColor];
+    backgroundView.opaque = NO;
+    [self.view addSubview:backgroundView];
+    [[self view] sendSubviewToBack:backgroundView];
+    
 }
 
 - (void)didReceiveMemoryWarning

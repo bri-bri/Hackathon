@@ -7,6 +7,7 @@
 //
 
 #import "StoreViewController.h"
+#import "CBStore.h"
 
 @interface StoreViewController ()
 
@@ -36,6 +37,7 @@
     backgroundView.image = [UIImage imageNamed:@"BG.png"];
     backgroundView.backgroundColor = [UIColor clearColor];
     backgroundView.opaque = NO;
+    
     self.tableContainer.backgroundColor = [UIColor clearColor];
     [self.tableContainer addSubview:storeView.view];
     [self.view insertSubview:backgroundView belowSubview:self.tableContainer];

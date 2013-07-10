@@ -238,7 +238,6 @@ int storeViewTag;
     //NSLog(@"%@", item[@"type"]);
     if (![item[@"type"] isEqualToString:@"label"]) {
         
-        NSLog(@"Item is not label!");
         self->isLabelRow = NO;
         BOOL isPurchased = [self.items[indexPath.row][@"purchased"] boolValue];
         if (isPurchased) {
@@ -336,7 +335,6 @@ int storeViewTag;
         
         
     } else {
-        NSLog(@"Item is label");
         bCell.userInteractionEnabled = NO;
        bCell.titleLabel.adjustsFontSizeToFitWidth = YES;
         bCell.titleLabel.textColor = [UIColor whiteColor];
@@ -351,6 +349,102 @@ int storeViewTag;
     
     return bCell;
 }
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    BOOL isPurchased = [_items[indexPath.row][@"purchased"] boolValue];
+    if (isPurchased) {
+        return;
+    }
+    
+    self->purchaseItem = self.items[indexPath.row];
+    
+    NSLog(@"%@",_items[indexPath.row][@"currency"]);
+    if ([_items[indexPath.row][@"currency"] isEqualToString:@"Cognate Cash"]) {
+        
+        CBStore *store = [CBStore sharedStore];
+        
+        __block StoreTableView *weakSelf = self;
+        
+        
+        
+        [store purchaseItem:weakSelf->purchaseItem safely:NO callback:^(CBStorePurchaseStatus success, NSDictionary *item) {
+            
+            NSLog(@"%u purchased: %@", success, weakSelf->purchaseItem);
+            
+            switch (success) {
+                case kCBStorePurchaseStatusSuccessful:{
+                    
+                    [self updateStoreItemsAnimated:YES];
+                    
+                }break;
+                case kCBStorePurchaseStatusUnsuccessful:{
+                    
+                    UIAlertView *purchaseFailedAlertView = [[UIAlertView alloc] initWithTitle:@"Purchase Failed" message:@"please check your internet connection and try again." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+                    
+                    [purchaseFailedAlertView show];
+                    
+                }break;
+                case kCBStorePurchaseStatusInsufficientFunds:{
+                    
+                    UIAlertView *noCoinsAlertView = [[UIAlertView alloc] initWithTitle:@"You Don't Have Enough Coins!" message:@"collect more coins or buy a coin pack!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+                    
+                    [noCoinsAlertView show];
+                    
+                }break;
+                default:{
+                    
+                    [self updateStoreItemsAnimated:YES];
+                    
+                }break;
+            }
+        }];
+        
+    } else {
+        
+        CBStore *store = [CBStore sharedStore];
+        
+        __block StoreTableView *weakSelf = self;
+        
+        
+        //[[CBDefaultViewController sharedController] displayLoadingView];
+        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 0.25);
+        
+        [store purchaseItem:weakSelf->purchaseItem safely:YES callback:^(CBStorePurchaseStatus success, NSDictionary *item) {
+            void(^dismissal)() = ^{
+               // [[CBDefaultViewController sharedController] dismissLoadingView];
+            };
+            if (DISPATCH_TIME_NOW > time) {
+                dispatch_async(dispatch_get_main_queue(), dismissal);
+            } else {
+                dispatch_after(time, dispatch_get_main_queue(), dismissal);
+            }
+            NSLog(@"%u purchased: %@", success, weakSelf->purchaseItem);
+            
+            
+            if (!success) {
+                UIAlertView *purchaseFailedAlertView = [[UIAlertView alloc] initWithTitle:@"Purchase Failed" message:@"please check your internet connection and try again." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+                
+                [purchaseFailedAlertView show];
+            }else{
+                
+                //[[CBStore sharedStore] initializeStore]; // re-load store info
+                [self updateStoreItemsAnimated:YES];
+               // [self createFlexibleCoinBankWith:coinBankRoll viewAnimated:YES];
+            }
+            
+            
+        }];
+        
+    }
+    
+    [self.myTableView reloadData];
+    
+    [self.myTableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
 
 
 @end
