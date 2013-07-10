@@ -7,6 +7,7 @@
 //
 
 #import "HackLetter.h"
+#import "HackSettings.h"
 
 #include <stdlib.h>
 
@@ -14,6 +15,8 @@
 
 @synthesize mySprite;
 @synthesize letter;
+@synthesize shotTimer;
+@synthesize speed,range,damage,type;
 
 -(id)init
 {
@@ -52,10 +55,13 @@
 
 -(void)setPropertiesBasedOnLetter
 {
-    //TODO
+    NSDictionary *letters = [HackSettings sharedSettings].letters;
+    
     type = @"";
-    damage = @1;
-    speed = [NSNumber numberWithInt:1];
+    int damageInt = (int)1 + arc4random() % 2;
+    damage = [NSNumber numberWithInt:damageInt];
+    int speedInt = (int)1 + arc4random() % 3;
+    speed = [NSNumber numberWithInt:speedInt];
     range = [NSNumber numberWithInt:1];
     
     NSString* tempStr = [NSString stringWithFormat:@"%@.png", letter];

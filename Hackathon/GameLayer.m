@@ -397,7 +397,7 @@
             tempSprite.position = ccp(newTower.mySprite.position.x, newTower.mySprite.position.y);
             
             tempSprite.visible = YES;
-            
+            [myLogic.gameLetters addObject:toAdd];
             [self addChild:tempSprite];
         }
         

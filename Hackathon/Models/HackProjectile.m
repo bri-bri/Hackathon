@@ -12,7 +12,7 @@
 
 @implementation HackProjectile
 
-@synthesize damage,speed,range,type,start,finish,target;
+@synthesize damage,speed,range,type,start,finish,target,mySprite;
 
 -(id)initWithLetter:(HackLetter*)letter andTarget:(HackEnemy*)enemy {
     self = [super init];
@@ -46,7 +46,9 @@
 -(BOOL)removeAndCheckDamage
 {
     [mySprite.parent removeChild:self.mySprite];
+    if(target){
     [target takeDamage:damage];
+    }
     
     return true;
 }

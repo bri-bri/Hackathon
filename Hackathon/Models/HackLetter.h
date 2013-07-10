@@ -19,6 +19,7 @@
     NSMutableDictionary* boosts; //a list of all boosts that have been applied to this letter
     
     CCSprite* mySprite;
+    ccTime shotTimer;
 }
 
 @property NSString* letter;
@@ -28,6 +29,7 @@
 @property NSNumber* range;
 @property  NSMutableDictionary* boosts;
 @property  CCSprite* mySprite;
+@property ccTime shotTimer;
 
 -(void)randomizeLetter;
 

@@ -34,16 +34,7 @@
         gameEnemies = [[NSMutableArray alloc] initWithCapacity:10];
         gameBullets = [[NSMutableArray alloc] init];
         gameLetters = [[NSMutableArray alloc] init];
-        HackLetter *testLetter = [[HackLetter alloc] init];
-        testLetter.mySprite.visible = YES;
         
-        int xLoc = [_gameBoard getXLocFromGridX:0 gridWidth:30];
-        int yLoc = [_gameBoard getYLocFromGridY:0 gridHeight:30];
-        
-        testLetter.mySprite.position = ccp(xLoc,yLoc);
-        [gameLetters addObject:testLetter];
-        
-        [myLayer addChild:testLetter.mySprite];
         enemiesToSpawn = 0;
         spawnInterval = 1.5f;
         spawnTimer = 0.0f;
@@ -157,23 +148,19 @@
     {
         HackProjectile* blt = [gameBullets objectAtIndex:i];
         float distToTarget = 0.0f;
-        float speed = blt.speed.floatValue * 10.0f;
+        float speed = 200.0f;
         float currentX = blt.mySprite.position.x;
         float currentY = blt.mySprite.position.y;
         float targetX = blt.finish.x;
         float targetY = blt.finish.y;
-        if(currentX < targetX){
-            targetX = currentX + speed * dT;
-        } else {
-            targetX = currentX - speed * dT;
-        }
-        if(currentY < targetY){
-            targetY = currentY + speed * dT;
-        } else {
-            targetY = currentY - speed * dT;
-        }
         
-        blt.mySprite.position = ccp(targetX,targetY);
+        distToTarget = sqrtf(pow(targetX - currentX, 2) + pow(targetY - currentY, 2));
+        float moveX = ((targetX - currentX)/distToTarget) * speed * dT;
+        float moveY = ((targetY - currentY)/distToTarget) * speed * dT;
+        float newX = blt.mySprite.position.x + moveX;
+        float newY = blt.mySprite.position.y + moveY;
+        
+        blt.mySprite.position = ccp(newX,newY);
         
         
         if([blt atFinish]){
@@ -184,24 +171,31 @@
     
     //create bullets
     
-    /*
-    for(int i = [gameLetters count]; i >= 0; i--){
-       HackLetter *temp = [gameLetters objectAtIndex:i];
-    
-        if(tempLetter.shotTimer > 1000){
-            HackProjectile *newblt = [[HackProjectile alloc] initWithLetter:tempLetter andTarget:(HackEnemy*)[gameEnemies objectAtIndex:0]];
-            [gameBullets addObject:newblt];
-            [myLayer addChild:newblt.mySprite];
-           tempLetter.shotTimer = 0;
-       } else {
-           tempLetter.shotTimer += dT;
-       }
+    if([gameEnemies count] > 0){
+        for(int i = [gameLetters count] - 1; i >= 0; i--){
+           HackLetter *tempLetter = [gameLetters objectAtIndex:i];
+            if(tempLetter.shotTimer > tempLetter.speed.integerValue){
+                HackProjectile *newblt = [[HackProjectile alloc] initWithLetter:tempLetter andTarget:(HackEnemy*)[gameEnemies objectAtIndex:0]];
+                [gameBullets addObject:newblt];
+                [myLayer addChild:newblt.mySprite];
+               tempLetter.shotTimer = 0;
+           } else {
+               tempLetter.shotTimer += dT;
+           }
+        }
     }
-     */
     
     
     //detect for enemy deaths
+    for(int i = [gameEnemies count] - 1; i >= 0; i--)
+    {
+        HackEnemy *nme = [gameEnemies objectAtIndex:i];
+        if(nme.hp.integerValue <= 0){
+            [gameEnemies removeObjectAtIndex:i];
+            [myLayer removeChild:nme.mySprite cleanup:true];
+        }
     
+    }
     //spawn a new enemy?
     
     if(enemiesToSpawn > 0)
@@ -232,7 +226,7 @@
 {
     //spawn enemy
     HackEnemy* toAdd = [HackEnemy alloc];
-    
+    toAdd.hp = [NSNumber numberWithInt:10];
     //position enemy sprite at start
     toAdd.mySprite = [CCSprite spriteWithFile:@"Sprites.png"];
     

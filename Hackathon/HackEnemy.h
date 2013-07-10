@@ -12,7 +12,7 @@
 
 @interface HackEnemy : NSObject {
     NSString* type;
-    NSInteger* hp;
+    NSNumber* hp;
     NSNumber* speed;
     
     CCSprite* mySprite;
@@ -20,7 +20,7 @@
 }
 
 @property NSString* type;
-@property NSInteger* hp;
+@property NSNumber* hp;
 @property NSNumber* speed;
 @property  CCSprite* mySprite;
 @property int pathInt;

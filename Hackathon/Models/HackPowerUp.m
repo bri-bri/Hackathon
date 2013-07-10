@@ -23,7 +23,7 @@
         
         UIImage *iconImage = [[UIImage alloc] initWithData:imageData];
         
-        UIImage *smallIcon = [HackPowerUp imageWithImage:iconImage scaledToSize:CGSizeMake(30,30)];
+        UIImage *smallIcon = [HackPowerUp imageWithImage:iconImage scaledToSize:CGSizeMake(40,40)];
         
         mySprite = [CCSprite spriteWithCGImage:smallIcon.CGImage key:item[@"name"]];
          

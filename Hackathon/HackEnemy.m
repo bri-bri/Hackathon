@@ -12,9 +12,11 @@
 
 @synthesize mySprite;
 @synthesize pathInt;
+@synthesize hp;
 
 -(void)takeDamage:(NSNumber *)damage
 {
-    
+    float temp = hp.floatValue - damage.floatValue;
+    hp = [NSNumber numberWithFloat:temp];
 }
 @end
