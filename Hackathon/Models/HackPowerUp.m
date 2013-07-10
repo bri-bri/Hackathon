@@ -11,7 +11,7 @@
 #import "HackPowerUp.h"
 
 @implementation HackPowerUp
-@synthesize mySprite,url;
+@synthesize mySprite,url,powerUp;
 
 -(id) initWithItem:(NSDictionary *)item
 {
@@ -19,6 +19,8 @@
     if(self){
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:item[@"meta"][@"icon"]]];
         url = item[@"meta"][@"icon"];
+        powerUp = item;
+        
         UIImage *iconImage = [[UIImage alloc] initWithData:imageData];
         
         UIImage *smallIcon = [HackPowerUp imageWithImage:iconImage scaledToSize:CGSizeMake(30,30)];
