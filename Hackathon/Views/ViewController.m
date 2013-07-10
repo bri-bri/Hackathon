@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "StoreViewController.h"
+#import "CBStore.h"
 
 @interface ViewController ()
 
@@ -34,6 +35,13 @@
     backgroundView.image = [UIImage imageNamed:@"SplashScreen.png"];
     backgroundView.backgroundColor = [UIColor clearColor];
     backgroundView.opaque = NO;
+    
+    __block ViewController *weakSelf = self;
+    
+    [[CBStore sharedStore] subscribeToBalancesWhileAlive:self callback:^(NSDictionary *balances) {
+        weakSelf.balance.text = [NSString stringWithFormat:@"%@",(NSNumber *)balances[@"Cognate Cash"]];
+    }];
+    
     [self.view addSubview:backgroundView];
     [[self view] sendSubviewToBack:backgroundView];
     
@@ -46,6 +54,8 @@
 }
 
 - (void)viewDidUnload {
+    [self setBalance:nil];
+
     [super viewDidUnload];
 }
 - (IBAction)showStore:(id)sender {
@@ -59,6 +69,14 @@
      postNotificationName:@"ChangeView"
      object:nil
      ];
+}
+
+- (IBAction)earnCurrency:(id)sender {
+    [[CBStore sharedStore] earn:10 forCurrency:@"Cognate Cash"];
+}
+
+- (IBAction)spendCurrency:(id)sender {
+    [[CBStore sharedStore] spend:10 forCurrency:@"Cognate Cash"];
 }
 
 @end

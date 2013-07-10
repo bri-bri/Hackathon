@@ -10,7 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *balance;
 - (IBAction)showStore:(id)sender;
 - (IBAction)startGame:(id)sender;
+- (IBAction)earnCurrency:(id)sender;
+- (IBAction)spendCurrency:(id)sender;
 
 @end

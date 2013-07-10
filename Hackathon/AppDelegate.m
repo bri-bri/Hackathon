@@ -65,7 +65,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    Chartboost* cb = [Chartboost sharedChartboost];
     
+    cb.appId = @"51d5e98217ba470a2c000009";
+    cb.appSignature = @"6165cc4656a1c3c178d5e5e876104dd9757c475d";
+    cb.appPublicKey = @"367b9edb5410f9f552e4817f3b1d1814f0e7c39ebb14d5834e6e563cda442741";
+    
+    //[cb startSession];
     
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

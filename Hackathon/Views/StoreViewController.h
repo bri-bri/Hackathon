@@ -13,6 +13,7 @@
 - (IBAction)back:(id)sender;
 
 @property (nonatomic, retain) IBOutlet UIView *tableContainer;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *balance;
 
 @property (nonatomic, retain) StoreTableView *tabOne;
 @property (nonatomic, retain) StoreTableView *tabTwo;

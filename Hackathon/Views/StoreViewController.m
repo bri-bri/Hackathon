@@ -38,6 +38,12 @@
     backgroundView.backgroundColor = [UIColor clearColor];
     backgroundView.opaque = NO;
     
+    __block StoreViewController *weakSelf = self;
+    
+    [[CBStore sharedStore] subscribeToBalancesWhileAlive:self callback:^(NSDictionary *balances) {
+        weakSelf.balance.text = [NSString stringWithFormat:@"%@",(NSNumber *)balances[@"Cognate Cash"]];
+    }];
+    
     self.tableContainer.backgroundColor = [UIColor clearColor];
     [self.tableContainer addSubview:storeView.view];
     [self.view insertSubview:backgroundView belowSubview:self.tableContainer];
@@ -54,6 +60,7 @@
 }
 - (void)viewDidUnload {
     [self setTableContainer:nil];
+    [self setBalance:nil];
     [super viewDidUnload];
 }
 @end
