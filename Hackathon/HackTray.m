@@ -69,6 +69,11 @@
 - (void)emptyHandLetters
 {
     [handLetters removeAllObjects];
+    for(int i = [handLetterSprites count] - 1; i >= 0; i--){
+        CCSprite *tempSprite = [handLetterSprites objectAtIndex:i];
+        [tempSprite.parent removeChild:tempSprite];
+        [handLetterSprites removeObjectAtIndex:i];
+    }
 }
 
 - (void)emptyHandPowerUps
