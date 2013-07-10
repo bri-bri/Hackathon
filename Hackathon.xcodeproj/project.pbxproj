@@ -187,6 +187,7 @@
 		13895163178D02F9009DAF22 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13895162178D02F9009DAF22 /* coin.png */; };
 		13895166178D1BF8009DAF22 /* HackPowerUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 13895165178D1BF8009DAF22 /* HackPowerUp.m */; };
 		13BDD5E7178D822F00DC9DDC /* HackSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BDD5E6178D822F00DC9DDC /* HackSettings.m */; };
+		13EE532D178DE90600674E3E /* sprite_bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 13EE532C178DE90600674E3E /* sprite_bullet.png */; };
 		3756F652178D8A2500310196 /* sowpods.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3756F651178D8A2500310196 /* sowpods.txt */; };
 		3756F655178D8D5000310196 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3756F653178D8D5000310196 /* button2.png */; };
 		3756F656178D8D5000310196 /* buttonDown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3756F654178D8D5000310196 /* buttonDown2.png */; };
@@ -592,6 +593,7 @@
 		13895165178D1BF8009DAF22 /* HackPowerUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackPowerUp.m; path = Models/HackPowerUp.m; sourceTree = "<group>"; };
 		13BDD5E5178D822F00DC9DDC /* HackSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackSettings.h; sourceTree = "<group>"; };
 		13BDD5E6178D822F00DC9DDC /* HackSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackSettings.m; sourceTree = "<group>"; };
+		13EE532C178DE90600674E3E /* sprite_bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_bullet.png; sourceTree = "<group>"; };
 		3756F651178D8A2500310196 /* sowpods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sowpods.txt; sourceTree = "<group>"; };
 		3756F653178D8D5000310196 /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
 		3756F654178D8D5000310196 /* buttonDown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonDown2.png; sourceTree = "<group>"; };
@@ -1233,6 +1235,7 @@
 				137E0A731788B9D800C5358A /* Chartboost.h */,
 				137E0A741788B9D800C5358A /* libChartboost.a */,
 				137E0A751788B9D800C5358A /* README.md */,
+				13EE532C178DE90600674E3E /* sprite_bullet.png */,
 			);
 			path = Chartboost;
 			sourceTree = "<group>";
@@ -1432,6 +1435,7 @@
 				3756F655178D8D5000310196 /* button2.png in Resources */,
 				3756F656178D8D5000310196 /* buttonDown2.png in Resources */,
 				1330D413178DA1460038F2A6 /* back.png in Resources */,
+				13EE532D178DE90600674E3E /* sprite_bullet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
