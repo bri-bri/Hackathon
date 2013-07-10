@@ -74,7 +74,7 @@
         
         [myTray setupTray:self];
         
-        [myTray fillHandLetters];
+        [myTray showHandLetters];
         
         //button for change gamestate
         CCMenuItem *stateButton = [CCMenuItemImage
