@@ -11,7 +11,7 @@
 #import "GameLayer.h"
 #import "HelloWorldLayer.h"
 #import "HackTileCoord.h"
-
+#import "ViewController.h"
 
 #pragma mark - GameLayer
 
@@ -81,7 +81,7 @@
         CCMenuItem *stateButton = [CCMenuItemImage
                                     itemFromNormalImage:@"button.png" selectedImage:@"buttonDown.png"
                                     target:self selector:@selector(stateButtonTapped:)];
-        stateButton.position = ccp(80, 40);
+        stateButton.position = ccp(80, 60);
         CCMenu *stateButtonMenu = [CCMenu menuWithItems:stateButton, nil];
         stateButtonMenu.position = CGPointZero;
         [self addChild:stateButtonMenu];
@@ -89,10 +89,18 @@
         CCMenuItem *refreshButton = [CCMenuItemImage
                                    itemFromNormalImage:@"button2.png" selectedImage:@"buttonDown2.png"
                                    target:self selector:@selector(refreshButtonTapped:)];
-        refreshButton.position = ccp(240, 40);
+        refreshButton.position = ccp(240, 60);
         CCMenu *refreshButtonMenu = [CCMenu menuWithItems:refreshButton, nil];
         refreshButtonMenu.position = CGPointZero;
         [self addChild:refreshButtonMenu];
+        
+        CCMenuItem *backButton = [CCMenuItemImage
+                                  itemFromNormalImage:@"back.png" selectedImage:@"back.png"
+                                  target:self selector:@selector(backToMenu:)];
+        backButton.position = ccp(160,20);
+        CCMenu *backButtonMenu = [CCMenu menuWithItems:backButton, nil];
+        backButtonMenu.position = CGPointZero;
+        [self addChild:backButtonMenu];
         
         [self schedule:@selector(gameLoop:) interval: 1/60.0f];
         
@@ -140,6 +148,14 @@
         [myTray fillHandLetters];
         [myTray showHandLetters];
     }
+}
+
+- (void) backToMenu:(id)sender
+{
+    NSLog(@"back to menu!");
+    UIView *glView = [CCDirector sharedDirector].openGLView;
+    ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    glView.window.rootViewController = viewController;
 }
 
 -(void)transitionToPreparationState
