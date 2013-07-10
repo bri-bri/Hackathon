@@ -13,7 +13,7 @@
 @interface HackLetter : NSObject {
     NSString* letter;
     NSString* type; //type of attack
-    NSInteger* damage;
+    NSNumber* damage;
     NSNumber* speed; // fire rate
     NSNumber* range; // distance that can be fired
     NSMutableDictionary* boosts; //a list of all boosts that have been applied to this letter
@@ -23,7 +23,7 @@
 
 @property NSString* letter;
 @property NSString* type;
-@property NSInteger* damage;
+@property NSNumber* damage;
 @property NSNumber* speed;
 @property NSNumber* range;
 @property  NSMutableDictionary* boosts;
@@ -32,5 +32,7 @@
 -(void)randomizeLetter;
 
 -(id)initWithLetter:(NSString*)ltr;
+
+-(NSNumber*)calculateDamage;
 
 @end

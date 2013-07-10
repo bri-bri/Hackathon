@@ -185,6 +185,7 @@
 		13800517178CFBBC00F93F5E /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 13800516178CFBBC00F93F5E /* SplashScreen.png */; };
 		13895163178D02F9009DAF22 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13895162178D02F9009DAF22 /* coin.png */; };
 		13895166178D1BF8009DAF22 /* HackPowerUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 13895165178D1BF8009DAF22 /* HackPowerUp.m */; };
+		13BDD5E7178D822F00DC9DDC /* HackSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BDD5E6178D822F00DC9DDC /* HackSettings.m */; };
 		379D751217877B1300E288E2 /* HackTileCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D750F17877B1300E288E2 /* HackTileCoord.m */; };
 		379D751317877B1300E288E2 /* HackTray.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D751117877B1300E288E2 /* HackTray.m */; };
 		379D751617877C6100E288E2 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D751417877C6100E288E2 /* tile.png */; };
@@ -584,6 +585,8 @@
 		13895162178D02F9009DAF22 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		13895164178D1BF8009DAF22 /* HackPowerUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackPowerUp.h; path = Models/HackPowerUp.h; sourceTree = "<group>"; };
 		13895165178D1BF8009DAF22 /* HackPowerUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackPowerUp.m; path = Models/HackPowerUp.m; sourceTree = "<group>"; };
+		13BDD5E5178D822F00DC9DDC /* HackSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackSettings.h; sourceTree = "<group>"; };
+		13BDD5E6178D822F00DC9DDC /* HackSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackSettings.m; sourceTree = "<group>"; };
 		379D750E17877B1300E288E2 /* HackTileCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTileCoord.h; sourceTree = "<group>"; };
 		379D750F17877B1300E288E2 /* HackTileCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackTileCoord.m; sourceTree = "<group>"; };
 		379D751017877B1300E288E2 /* HackTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTray.h; sourceTree = "<group>"; };
@@ -715,6 +718,8 @@
 		137C52A61787290B00DDBA53 /* Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				13BDD5E5178D822F00DC9DDC /* HackSettings.h */,
+				13BDD5E6178D822F00DC9DDC /* HackSettings.m */,
 				137C55E817874B6A00DDBA53 /* CCViews */,
 				137C55D517874A1E00DDBA53 /* Controllers */,
 				137C55D41787497600DDBA53 /* Models */,
@@ -1445,6 +1450,7 @@
 				137E0A6E1788B99100C5358A /* CustomCell.m in Sources */,
 				137E0A6F1788B99100C5358A /* StoreTableView.m in Sources */,
 				13895166178D1BF8009DAF22 /* HackPowerUp.m in Sources */,
+				13BDD5E7178D822F00DC9DDC /* HackSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

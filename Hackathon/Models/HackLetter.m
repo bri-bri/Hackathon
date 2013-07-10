@@ -54,7 +54,7 @@
 {
     //TODO
     type = @"";
-    damage = 1;
+    damage = @1;
     speed = [NSNumber numberWithInt:1];
     range = [NSNumber numberWithInt:1];
     
@@ -65,6 +65,11 @@
     mySprite.visible = NO;
     
     return;
+}
+
+-(NSNumber*)calculateDamage
+{
+    return damage;
 }
 
 @end

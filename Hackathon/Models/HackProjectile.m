@@ -15,6 +15,8 @@
 @synthesize damage,speed,range,type,start,finish,target;
 
 -(id)initWithLetter:(HackLetter*)letter andTarget:(HackEnemy*)enemy {
+    self = [super init];
+    if(self){
     start = CGPointMake(letter.mySprite.position.x,letter.mySprite.position.y);
     finish = CGPointMake(enemy.mySprite.position.x,enemy.mySprite.position.y);
     
@@ -26,6 +28,8 @@
     range = letter.range;
     
     target = enemy;
+    }
+    return self;
 }
 
 -(BOOL)atFinish
