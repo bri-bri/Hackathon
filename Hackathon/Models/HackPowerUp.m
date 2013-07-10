@@ -23,7 +23,7 @@
         
         UIImage *smallIcon = [HackPowerUp imageWithImage:iconImage scaledToSize:CGSizeMake(30,30)];
         
-        mySprite = [CCSprite spriteWithCGImage:smallIcon.CGImage key:@"test"];
+        mySprite = [CCSprite spriteWithCGImage:smallIcon.CGImage key:item[@"name"]];
          
         mySprite.visible = NO;
     }
