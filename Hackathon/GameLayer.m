@@ -12,6 +12,7 @@
 #import "HelloWorldLayer.h"
 #import "HackTileCoord.h"
 #import "ViewController.h"
+#import "HackPowerUp.h"
 
 #pragma mark - GameLayer
 
@@ -178,6 +179,7 @@ CCLabelTTF *killsCount;
 
 -(void)transitionToPreparationState
 {
+    [takenIndexes removeAllObjects];
     [myTray showHandLetters];
 }
 
@@ -190,28 +192,56 @@ CCLabelTTF *killsCount;
 
 - (void)selectSpriteForTouch:(CGPoint)touchLocation
 {
-    //for (CCSprite *sprite in myTray.handLetterSprites)
-    for(int i = 0; i < [myTray.handLetterSprites count]; i++)
+    if([myLogic isPlayingState] == false)
     {
-        CCSprite* sprite = [myTray.handLetterSprites objectAtIndex:i];
-        if (CGRectContainsPoint(sprite.boundingBox, touchLocation)) {
-            bool taken = false;
-            for(NSNumber* num in takenIndexes)
-            {
-                if([num intValue] == i)
+        //for (CCSprite *sprite in myTray.handLetterSprites)
+        for(int i = 0; i < [myTray.handLetterSprites count]; i++)
+        {
+            CCSprite* sprite = [myTray.handLetterSprites objectAtIndex:i];
+            if (CGRectContainsPoint(sprite.boundingBox, touchLocation)) {
+                bool taken = false;
+                for(NSNumber* num in takenIndexes)
                 {
-                    taken = true;
-                    break;
+                    if([num intValue] == i)
+                    {
+                        taken = true;
+                        break;
+                    }
                 }
+                if(taken == false)
+                {
+                    selSprite = sprite;
+                    selSpriteIndex = i;
+                    oldX = selSprite.position.x;
+                    oldY = selSprite.position.y;
+                }
+                break;
             }
-            if(taken == false)
+        }
+    }
+    else
+    {
+        //activating power-ups
+        int j = [myTray.handPowerUpSprites count];
+        NSLog(@"%d", j);
+        for(int i = 0; i < [myTray.handPowerUpSprites count]; i++)
+        {
+            CCSprite* sprite = [myTray.handPowerUpSprites objectAtIndex:i];
+            if (CGRectContainsPoint(sprite.boundingBox, touchLocation))
             {
-                selSprite = sprite;
-                selSpriteIndex = i;
-                oldX = selSprite.position.x;
-                oldY = selSprite.position.y;
+                /*
+                 CCSprite *tempSprite = [handPowerUpSprites objectAtIndex:i];
+                 [tempSprite.parent removeChild:tempSprite];
+                 [handPowerUpSprites removeObjectAtIndex:i];
+                 */
+                HackPowerUp* myPU = [myTray.handPowerUps objectAtIndex:i];
+                if([myPU isNamedThis:@"Prefix Power"])
+                {
+                    selSprite = sprite;
+                    selSpriteIndex = i;
+                }
+                break;
             }
-            break;
         }
     }
 }
@@ -226,77 +256,118 @@ CCLabelTTF *killsCount;
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
-    NSLog(@"touchEnded:x%fy%f", touchLocation.x, touchLocation.y);
-    if(selSprite != nil)
+    if([myLogic isPlayingState] == false)
     {
-        bool valid = false;
-        //is it in a valid grid spot?
-        if([self pointIsValidGridSpot:touchLocation])
+        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+        NSLog(@"touchEnded:x%fy%f", touchLocation.x, touchLocation.y);
+        if(selSprite != nil)
         {
-            //what spot is it?
-            int gridX = [myBoard getGridXFromXLoc:(int)touchLocation.x gridWidth:30];
-            int gridY = 9 - [myBoard getGridYFromYLoc:(int)touchLocation.y gridHeight:30];
-            
-            //is something already in that spot?
-            if(((HackTileCoord*)[[myBoard.tiles objectAtIndex:gridY] objectAtIndex:gridX]).status != 1)
+            bool valid = false;
+            //is it in a valid grid spot?
+            if([self pointIsValidGridSpot:touchLocation])
             {
-                bool taken = false;
-                for(HackTileCoord* coord in takenGridCoords)
+                //what spot is it?
+                int gridX = [myBoard getGridXFromXLoc:(int)touchLocation.x gridWidth:30];
+                int gridY = 9 - [myBoard getGridYFromYLoc:(int)touchLocation.y gridHeight:30];
+                
+                //is something already in that spot?
+                if(((HackTileCoord*)[[myBoard.tiles objectAtIndex:gridY] objectAtIndex:gridX]).status != 1)
                 {
-                    if(coord.col == gridX && coord.row == gridY)
+                    bool taken = false;
+                    for(HackTileCoord* coord in takenGridCoords)
                     {
-                        taken = true;
+                        if(coord.col == gridX && coord.row == gridY)
+                        {
+                            taken = true;
+                        }
                     }
-                }
-                //is another temp letter in that spot?
-                if(taken == false)
-                {
-                    //is that spot even in line with the other letters?
-                    if(true)
+                    //is another temp letter in that spot?
+                    if(taken == false)
                     {
-                        HackTileCoord* newCoord = [[HackTileCoord alloc] init];
-                        newCoord.col = gridX;
-                        newCoord.row = gridY;
-                        [takenGridCoords addObject:newCoord];
-                        
-                        selSprite.position = ccp(oldX, oldY);
-                        [selSprite setFlipY:YES];
-                        
-                        [takenIndexes addObject:[NSNumber numberWithInt:selSpriteIndex]];
-                        
-                        //hide from tray, we'll actually remove it if the word is valid
-                        valid = true;
-                        
-                        NSString* ltr = ((HackLetter*)[myTray.handLetters objectAtIndex:selSpriteIndex]).letter;
-                        HackLetter* toAdd = [[HackLetter alloc] initWithLetter:ltr];
-                        
-                        [possibleWord addObject:toAdd];
-                        
-                        CCSprite* tempSprite = toAdd.mySprite;
-                        
-                        int xLoc = 15 + [myBoard getXLocFromGridX:gridX gridWidth:30];
-                        int yLoc = 15 + [myBoard getYLocFromGridY:gridY gridHeight:30];
-                        
-                        tempSprite.position = ccp(xLoc, yLoc);
-                        
-                        tempSprite.visible = YES;
-                        
-                        [self addChild:tempSprite];
-                        
-                        selSpriteIndex = -1;
-                        selSprite = nil;
+                        //is that spot even in line with the other letters?
+                        if(true)
+                        {
+                            HackTileCoord* newCoord = [[HackTileCoord alloc] init];
+                            newCoord.col = gridX;
+                            newCoord.row = gridY;
+                            [takenGridCoords addObject:newCoord];
+                            
+                            selSprite.position = ccp(oldX, oldY);
+                            [selSprite setFlipY:YES];
+                            
+                            [takenIndexes addObject:[NSNumber numberWithInt:selSpriteIndex]];
+                            
+                            //hide from tray, we'll actually remove it if the word is valid
+                            valid = true;
+                            
+                            NSString* ltr = ((HackLetter*)[myTray.handLetters objectAtIndex:selSpriteIndex]).letter;
+                            HackLetter* toAdd = [[HackLetter alloc] initWithLetter:ltr];
+                            
+                            [possibleWord addObject:toAdd];
+                            
+                            CCSprite* tempSprite = toAdd.mySprite;
+                            
+                            int xLoc = 15 + [myBoard getXLocFromGridX:gridX gridWidth:30];
+                            int yLoc = 15 + [myBoard getYLocFromGridY:gridY gridHeight:30];
+                            
+                            tempSprite.position = ccp(xLoc, yLoc);
+                            
+                            tempSprite.visible = YES;
+                            
+                            [self addChild:tempSprite];
+                            
+                            selSpriteIndex = -1;
+                            selSprite = nil;
+                        }
                     }
                 }
             }
+            
+            if(valid == false)
+            {
+                //return to original spot
+                selSprite.position = ccp(oldX, oldY);
+                selSprite = nil;
+                selSpriteIndex = -1;
+            }
         }
-        
-        if(valid == false)
+    }
+    else
+    {
+        CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+        NSLog(@"touchEnded:x%fy%f", touchLocation.x, touchLocation.y);
+        if(selSprite != nil)
         {
-            //return to original spot
-            selSprite.position = ccp(oldX, oldY);
-            selSprite = nil;
-            selSpriteIndex = -1;
+            bool valid = false;
+            HackLetter* affectedTower = nil;
+            for(int i = 0; i < [myLogic.gameLetters count]; i++)
+            {
+                HackLetter* hckltr = [myLogic.gameLetters objectAtIndex:i];
+                CCSprite* spr = hckltr.mySprite;
+                if (CGRectContainsPoint(spr.boundingBox, touchLocation))
+                {
+                    valid = true;
+                    affectedTower = hckltr;
+                    break;
+                }
+            }
+            
+            if(valid == true)
+            {
+                //remove the power-up
+                CCSprite *tempSprite = [myTray.handPowerUpSprites objectAtIndex:selSpriteIndex];
+                [tempSprite.parent removeChild:tempSprite];
+                [myTray.handPowerUpSprites removeObjectAtIndex:selSpriteIndex];
+                
+                selSprite = nil;
+                selSpriteIndex = -1;
+                
+                //power-up that letter tower
+                
+                //TODO: put timer on the power up
+                
+                affectedTower.speed = [NSNumber numberWithFloat: ([affectedTower.speed floatValue] / 2.0f)];
+            }
         }
     }
 }

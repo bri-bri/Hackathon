@@ -177,7 +177,7 @@ int kills;
     if([gameEnemies count] > 0){
         for(int i = [gameLetters count] - 1; i >= 0; i--){
            HackLetter *tempLetter = [gameLetters objectAtIndex:i];
-            if(tempLetter.shotTimer > tempLetter.speed.integerValue){
+            if(tempLetter.shotTimer > tempLetter.speed.floatValue){
                 HackProjectile *newblt = [[HackProjectile alloc] initWithLetter:tempLetter andTarget:(HackEnemy*)[gameEnemies objectAtIndex:0]];
                 [gameBullets addObject:newblt];
                 [myLayer addChild:newblt.mySprite];

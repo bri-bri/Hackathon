@@ -61,7 +61,7 @@
     int damageInt = (int)1 + arc4random() % 2;
     damage = [NSNumber numberWithInt:damageInt];
     int speedInt = (int)1 + arc4random() % 3;
-    speed = [NSNumber numberWithInt:speedInt];
+    speed = [NSNumber numberWithFloat:speedInt];
     range = [NSNumber numberWithInt:1];
     
     NSString* tempStr = [NSString stringWithFormat:@"%@.png", letter];

@@ -25,4 +25,6 @@
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
+-(bool)isNamedThis:(NSString*)str;
+
 @end

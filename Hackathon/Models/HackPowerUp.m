@@ -41,4 +41,13 @@
     return newImage;
 }
 
+-(bool)isNamedThis:(NSString*)str
+{
+    if([[powerUp objectForKey:@"name"] isEqualToString:str])
+    {
+        return true;
+    }
+    return false;
+}
+
 @end

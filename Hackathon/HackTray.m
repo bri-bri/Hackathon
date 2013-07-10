@@ -20,6 +20,8 @@
 
 @synthesize handLetters;
 @synthesize handLetterSprites;
+@synthesize handPowerUps;
+@synthesize handPowerUpSprites;
 
 -(id)init
 {
