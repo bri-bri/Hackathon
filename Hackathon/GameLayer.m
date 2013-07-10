@@ -98,9 +98,9 @@ CCLabelTTF *killsCount;
         [self addChild:refreshButtonMenu];
         
         CCMenuItem *backButton = [CCMenuItemImage
-                                  itemFromNormalImage:@"back.png" selectedImage:@"back.png"
+                                  itemFromNormalImage:@"back.jpg" selectedImage:@"back.jpg"
                                   target:self selector:@selector(backToMenu:)];
-        backButton.position = ccp(160,20);
+        backButton.position = ccp(155,20);
         CCMenu *backButtonMenu = [CCMenu menuWithItems:backButton, nil];
         backButtonMenu.position = CGPointZero;
         [self addChild:backButtonMenu];

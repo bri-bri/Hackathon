@@ -26,6 +26,7 @@
     GameLayer*  myLayer;
     NSArray*    boardPath;
     int enemiesToSpawn;
+    int waves;
     float spawnInterval;
     float spawnTimer;
 }

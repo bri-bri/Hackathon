@@ -37,10 +37,12 @@ int kills;
         gameBullets = [[NSMutableArray alloc] init];
         gameLetters = [[NSMutableArray alloc] init];
         
+
         enemiesToSpawn = 0;
         spawnInterval = 1.5f;
         spawnTimer = 0.0f;
         kills = 0;
+        waves = 1;
     }
     return self;
 }
@@ -82,7 +84,7 @@ int kills;
     
     //prepare a spawn of enemies
     
-    enemiesToSpawn = 5;
+    enemiesToSpawn = 3 + waves*2;
     
     gameState = PLAYING;
     
@@ -222,6 +224,9 @@ int kills;
     
     if([gameEnemies count] == 0 && enemiesToSpawn == 0)
     {
+        if(gameState == PLAYING){
+            waves++;
+        }
         gameState = PREPARATION;
         spawnTimer = 0.0f;
         [myLayer transitionToPreparationState];
