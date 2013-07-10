@@ -367,39 +367,15 @@ int storeViewTag;
         
         __block StoreTableView *weakSelf = self;
         
+        NSString *detailString = [[NSString alloc] initWithFormat:@"%@",_items[indexPath.row][@"meta"][@"description"]];
         
-        
-        [store purchaseItem:weakSelf->purchaseItem safely:NO callback:^(CBStorePurchaseStatus success, NSDictionary *item) {
-            
-            NSLog(@"%u purchased: %@", success, weakSelf->purchaseItem);
-            
-            switch (success) {
-                case kCBStorePurchaseStatusSuccessful:{
-                    
-                    [self updateStoreItemsAnimated:YES];
-                    
-                }break;
-                case kCBStorePurchaseStatusUnsuccessful:{
-                    
-                    UIAlertView *purchaseFailedAlertView = [[UIAlertView alloc] initWithTitle:@"Purchase Failed" message:@"please check your internet connection and try again." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-                    
-                    [purchaseFailedAlertView show];
-                    
-                }break;
-                case kCBStorePurchaseStatusInsufficientFunds:{
-                    
-                    UIAlertView *noCoinsAlertView = [[UIAlertView alloc] initWithTitle:@"You Don't Have Enough Coins!" message:@"collect more coins or buy a coin pack!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-                    
-                    [noCoinsAlertView show];
-                    
-                }break;
-                default:{
-                    
-                    [self updateStoreItemsAnimated:YES];
-                    
-                }break;
-            }
-        }];
+        UIAlertView *alert = [[UIAlertView alloc] init];
+        [alert setTitle:[NSString stringWithFormat:@"Buy %@ for %@?",_items[indexPath.row][@"name"],_items[indexPath.row][@"amount"]]];
+        [alert setMessage:detailString];
+        [alert setDelegate:self];
+        [alert addButtonWithTitle:@"No"];
+        [alert addButtonWithTitle:@"Yes"];
+        [alert show];
         
     } else {
         
@@ -445,6 +421,46 @@ int storeViewTag;
     
 }
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    if(buttonIndex ==1){
+    CBStore* store = [CBStore sharedStore];
+    __block StoreTableView *weakSelf = self;
+    
+    [store purchaseItem:weakSelf->purchaseItem safely:NO callback:^(CBStorePurchaseStatus success, NSDictionary *item) {
+    
+    NSLog(@"%u purchased: %@", success, weakSelf->purchaseItem);
+    
+    switch (success) {
+        case kCBStorePurchaseStatusSuccessful:{
+            
+            [self updateStoreItemsAnimated:YES];
+            
+        }break;
+        case kCBStorePurchaseStatusUnsuccessful:{
+            
+            UIAlertView *purchaseFailedAlertView = [[UIAlertView alloc] initWithTitle:@"Purchase Failed" message:@"please check your internet connection and try again." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            
+            [purchaseFailedAlertView show];
+            
+        }break;
+        case kCBStorePurchaseStatusInsufficientFunds:{
+            
+            UIAlertView *noCoinsAlertView = [[UIAlertView alloc] initWithTitle:@"You Don't Have Enough Cash!" message:@"collect more cognate cash or buy a cash pack!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            
+            [noCoinsAlertView show];
+            
+        }break;
+        default:{
+            
+            [self updateStoreItemsAnimated:YES];
+            
+        }break;
+    }
+}];
+    }
+}
 
 
 @end

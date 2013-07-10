@@ -52,7 +52,7 @@
         //self->detailLabel.font = [UIFont fontWithName:@"Helvetica" size:10];
         //self->detailLabel.adjustsFontSizeToFitWidth = YES;
         //self->detailLabel.textColor = [UIColor whiteColor];
-        self->detailLabel.backgroundColor = [UIColor clearColor];
+        //self->detailLabel.backgroundColor = [UIColor clearColor];
         
         self->cashLabel = [[UILabel alloc] initWithFrame:CGRectMake(225, 11, 80, 41)];
        // self->cashLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
@@ -61,13 +61,14 @@
         //self->cashLabel.textColor = [UIColor whiteColor];
         self->cashLabel.backgroundColor = [UIColor clearColor];
         
+        self.contentView.backgroundColor = [UIColor clearColor];
         
         
         [self.contentView addSubview:self->titleLabel];
         [self.contentView addSubview:self->cellIcon];
         [self.contentView addSubview:self->coinIcon];
         [self.contentView addSubview:self->topLabel];
-        [self.contentView addSubview:self->detailLabel];
+        //[self.contentView addSubview:self->detailLabel];
         [self.contentView addSubview:self->cashLabel];
         
         
