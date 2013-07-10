@@ -25,4 +25,6 @@
 @property  CCSprite* mySprite;
 @property int pathInt;
 
+-(void)takeDamage:(NSNumber*)damage;
+
 @end
