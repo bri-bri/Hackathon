@@ -14,10 +14,12 @@
     
     CCSprite* mySprite;
     NSString* url;
+    NSDictionary* powerUp;
 }
 
 @property  CCSprite* mySprite;
 @property  NSString* url;
+@property NSDictionary* powerUp;
 
 -(id) initWithItem:(NSDictionary*)item;
 

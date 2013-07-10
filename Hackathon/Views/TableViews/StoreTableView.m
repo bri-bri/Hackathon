@@ -451,6 +451,12 @@ int storeViewTag;
             
             [purchasedItems setValue:theItem forKey:weakSelf->purchaseItem[@"name"]];
             NSLog(@"%@",purchasedItems);
+            
+            UIAlertView *purchaseSucceedAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ Purchased!",saveItem[@"name"]] message:[NSString stringWithFormat:@"You now own %@!",amount] delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            
+            [purchaseSucceedAlert show];
+
+            
             [self updateStoreItemsAnimated:YES];
             
         }break;
