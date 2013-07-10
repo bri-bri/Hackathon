@@ -252,4 +252,13 @@
     [gameEnemies addObject:toAdd];
 }
 
+-(bool)isPlayingState
+{
+    if(gameState == PLAYING)
+    {
+        return true;
+    }
+    return false;
+}
+
 @end

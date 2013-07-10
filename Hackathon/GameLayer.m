@@ -81,10 +81,18 @@
         CCMenuItem *stateButton = [CCMenuItemImage
                                     itemFromNormalImage:@"button.png" selectedImage:@"buttonDown.png"
                                     target:self selector:@selector(stateButtonTapped:)];
-        stateButton.position = ccp(155, 40);
+        stateButton.position = ccp(80, 40);
         CCMenu *stateButtonMenu = [CCMenu menuWithItems:stateButton, nil];
         stateButtonMenu.position = CGPointZero;
         [self addChild:stateButtonMenu];
+        
+        CCMenuItem *refreshButton = [CCMenuItemImage
+                                   itemFromNormalImage:@"button2.png" selectedImage:@"buttonDown2.png"
+                                   target:self selector:@selector(refreshButtonTapped:)];
+        refreshButton.position = ccp(240, 40);
+        CCMenu *refreshButtonMenu = [CCMenu menuWithItems:refreshButton, nil];
+        refreshButtonMenu.position = CGPointZero;
+        [self addChild:refreshButtonMenu];
         
         [self schedule:@selector(gameLoop:) interval: 1/60.0f];
         
@@ -112,7 +120,7 @@
 
 - (void) stateButtonTapped:(id)sender
 {
-    NSLog(@"Awesome");
+    //NSLog(@"Awesome");
     bool didTransition = false;
     
     if([myLogic shouldAttemptTransition])
@@ -121,6 +129,16 @@
         {
             didTransition = [myLogic doTransition];
         }
+    }
+}
+
+- (void) refreshButtonTapped:(id)sender
+{
+    if(![myLogic isPlayingState])
+    {
+        [myTray emptyHandLetters];
+        [myTray fillHandLetters];
+        [myTray showHandLetters];
     }
 }
 
@@ -281,28 +299,42 @@
     
     //is it even a word?
     
+    NSString* posWord = @"";
+    
+    for(int i = 0; i < [possibleWord count]; i++)
+    {
+        posWord = [NSString stringWithFormat:@"%@%@",
+                                            posWord,
+                   ((HackLetter*)[possibleWord objectAtIndex:i]).letter ];
+    }
+    
+    bool isWord = [myLogic verifyWord:[posWord lowercaseString]];
+    
     //if not, abort
-    if(false)
+    if(isWord == false)
     {
         abort = true;
     }
-    //temporarily build new boardState
-    for(HackTileCoord* coord in takenGridCoords)
+    else
     {
-        ((HackTileCoord*)[[myBoard.tiles objectAtIndex:coord.row] objectAtIndex:coord.col]).status = 1;
-    }
-    //test new boardstate's path-worthiness
-    
-    NSArray* test = [myBoard getPath:myBoard.tiles sRow:0 sCol:0 eRow:9 eCol:9];
-    
-    //if not path-worthy, revert boardstate and abort
-    if(test == nil)
-    {
-        abort = true;
-        //revert boardstate
+        //temporarily build new boardState
         for(HackTileCoord* coord in takenGridCoords)
         {
-            ((HackTileCoord*)[[myBoard.tiles objectAtIndex:coord.row] objectAtIndex:coord.col]).status = 0;
+            ((HackTileCoord*)[[myBoard.tiles objectAtIndex:coord.row] objectAtIndex:coord.col]).status = 1;
+        }
+        //test new boardstate's path-worthiness
+        
+        NSArray* test = [myBoard getPath:myBoard.tiles sRow:0 sCol:0 eRow:9 eCol:9];
+        
+        //if not path-worthy, revert boardstate and abort
+        if(test == nil)
+        {
+            abort = true;
+            //revert boardstate
+            for(HackTileCoord* coord in takenGridCoords)
+            {
+                ((HackTileCoord*)[[myBoard.tiles objectAtIndex:coord.row] objectAtIndex:coord.col]).status = 0;
+            }
         }
     }
     

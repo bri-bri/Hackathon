@@ -64,4 +64,6 @@ typedef enum gameStateType : NSInteger {
 
 -(void)spawnEnemy;
 
+-(bool)isPlayingState;
+
 @end

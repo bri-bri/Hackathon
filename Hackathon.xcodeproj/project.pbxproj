@@ -186,6 +186,9 @@
 		13895163178D02F9009DAF22 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13895162178D02F9009DAF22 /* coin.png */; };
 		13895166178D1BF8009DAF22 /* HackPowerUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 13895165178D1BF8009DAF22 /* HackPowerUp.m */; };
 		13BDD5E7178D822F00DC9DDC /* HackSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BDD5E6178D822F00DC9DDC /* HackSettings.m */; };
+		3756F652178D8A2500310196 /* sowpods.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3756F651178D8A2500310196 /* sowpods.txt */; };
+		3756F655178D8D5000310196 /* button2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3756F653178D8D5000310196 /* button2.png */; };
+		3756F656178D8D5000310196 /* buttonDown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3756F654178D8D5000310196 /* buttonDown2.png */; };
 		379D751217877B1300E288E2 /* HackTileCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D750F17877B1300E288E2 /* HackTileCoord.m */; };
 		379D751317877B1300E288E2 /* HackTray.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D751117877B1300E288E2 /* HackTray.m */; };
 		379D751617877C6100E288E2 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D751417877C6100E288E2 /* tile.png */; };
@@ -587,6 +590,9 @@
 		13895165178D1BF8009DAF22 /* HackPowerUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackPowerUp.m; path = Models/HackPowerUp.m; sourceTree = "<group>"; };
 		13BDD5E5178D822F00DC9DDC /* HackSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackSettings.h; sourceTree = "<group>"; };
 		13BDD5E6178D822F00DC9DDC /* HackSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackSettings.m; sourceTree = "<group>"; };
+		3756F651178D8A2500310196 /* sowpods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sowpods.txt; sourceTree = "<group>"; };
+		3756F653178D8D5000310196 /* button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button2.png; sourceTree = "<group>"; };
+		3756F654178D8D5000310196 /* buttonDown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonDown2.png; sourceTree = "<group>"; };
 		379D750E17877B1300E288E2 /* HackTileCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTileCoord.h; sourceTree = "<group>"; };
 		379D750F17877B1300E288E2 /* HackTileCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackTileCoord.m; sourceTree = "<group>"; };
 		379D751017877B1300E288E2 /* HackTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTray.h; sourceTree = "<group>"; };
@@ -739,6 +745,7 @@
 		137C52A71787290B00DDBA53 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3756F651178D8A2500310196 /* sowpods.txt */,
 				13800516178CFBBC00F93F5E /* SplashScreen.png */,
 				137C52AA1787290B00DDBA53 /* Default@2x.png */,
 				137C52AC1787290B00DDBA53 /* Default-568h@2x.png */,
@@ -1231,6 +1238,8 @@
 		379D750B17877AEE00E288E2 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				3756F653178D8D5000310196 /* button2.png */,
+				3756F654178D8D5000310196 /* buttonDown2.png */,
 				37D711CF178D3D9600DF32CC /* button.png */,
 				37D711D0178D3D9600DF32CC /* buttonDown.png */,
 				13895162178D02F9009DAF22 /* coin.png */,
@@ -1416,6 +1425,9 @@
 				13895163178D02F9009DAF22 /* coin.png in Resources */,
 				37D711D1178D3D9600DF32CC /* button.png in Resources */,
 				37D711D2178D3D9600DF32CC /* buttonDown.png in Resources */,
+				3756F652178D8A2500310196 /* sowpods.txt in Resources */,
+				3756F655178D8D5000310196 /* button2.png in Resources */,
+				3756F656178D8D5000310196 /* buttonDown2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
