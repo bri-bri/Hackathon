@@ -184,6 +184,7 @@
 		137E0A821788BB3700C5358A /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 137E0A811788BB3700C5358A /* BG.png */; };
 		13800517178CFBBC00F93F5E /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 13800516178CFBBC00F93F5E /* SplashScreen.png */; };
 		13895163178D02F9009DAF22 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13895162178D02F9009DAF22 /* coin.png */; };
+		13895166178D1BF8009DAF22 /* HackPowerUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 13895165178D1BF8009DAF22 /* HackPowerUp.m */; };
 		379D751217877B1300E288E2 /* HackTileCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D750F17877B1300E288E2 /* HackTileCoord.m */; };
 		379D751317877B1300E288E2 /* HackTray.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D751117877B1300E288E2 /* HackTray.m */; };
 		379D751617877C6100E288E2 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D751417877C6100E288E2 /* tile.png */; };
@@ -581,6 +582,8 @@
 		137E0A811788BB3700C5358A /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		13800516178CFBBC00F93F5E /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = Resources/SplashScreen.png; sourceTree = "<group>"; };
 		13895162178D02F9009DAF22 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
+		13895164178D1BF8009DAF22 /* HackPowerUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HackPowerUp.h; path = Models/HackPowerUp.h; sourceTree = "<group>"; };
+		13895165178D1BF8009DAF22 /* HackPowerUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HackPowerUp.m; path = Models/HackPowerUp.m; sourceTree = "<group>"; };
 		379D750E17877B1300E288E2 /* HackTileCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTileCoord.h; sourceTree = "<group>"; };
 		379D750F17877B1300E288E2 /* HackTileCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackTileCoord.m; sourceTree = "<group>"; };
 		379D751017877B1300E288E2 /* HackTray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackTray.h; sourceTree = "<group>"; };
@@ -1152,6 +1155,8 @@
 				379D750F17877B1300E288E2 /* HackTileCoord.m */,
 				379D751017877B1300E288E2 /* HackTray.h */,
 				379D751117877B1300E288E2 /* HackTray.m */,
+				13895164178D1BF8009DAF22 /* HackPowerUp.h */,
+				13895165178D1BF8009DAF22 /* HackPowerUp.m */,
 				137C55D617874A8600DDBA53 /* HackBoard.h */,
 				137C55D717874A8600DDBA53 /* HackBoard.m */,
 				137C55D917874A9600DDBA53 /* HackTile.h */,
@@ -1439,6 +1444,7 @@
 				379D751317877B1300E288E2 /* HackTray.m in Sources */,
 				137E0A6E1788B99100C5358A /* CustomCell.m in Sources */,
 				137E0A6F1788B99100C5358A /* StoreTableView.m in Sources */,
+				13895166178D1BF8009DAF22 /* HackPowerUp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

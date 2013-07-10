@@ -73,6 +73,11 @@
     
     //[cb startSession];
     
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"items"]){
+        NSMutableDictionary *items = [[NSMutableDictionary alloc] init];
+        [[NSUserDefaults standardUserDefaults] setValue:items forKey:@"items"];
+    }
+    
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
