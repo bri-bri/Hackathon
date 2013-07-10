@@ -20,6 +20,11 @@
 
 - (void)setupBoard:(GameLayer*) gLayer;
 
+- (void)testPath;
+
 - (NSArray*)getPath:(NSArray*)board sRow:(int)sR sCol:(int)sC eRow:(int)eR eCol:(int)eC;
+
+-(float)getXLocFromGridX:(int)gridX gridWidth:(float)width;
+-(float)getYLocFromGridY:(int)gridY gridHeight:(float)height;
 
 @end

@@ -219,6 +219,8 @@
 		379D7553178786A600E288E2 /* Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D7539178786A600E288E2 /* Y.png */; };
 		379D7554178786A600E288E2 /* Z.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D753A178786A600E288E2 /* Z.png */; };
 		379D7556178786AE00E288E2 /* Sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 379D7555178786AE00E288E2 /* Sprites.png */; };
+		37D711D1178D3D9600DF32CC /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D711CF178D3D9600DF32CC /* button.png */; };
+		37D711D2178D3D9600DF32CC /* buttonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D711D0178D3D9600DF32CC /* buttonDown.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -616,6 +618,8 @@
 		379D7539178786A600E288E2 /* Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Y.png; sourceTree = "<group>"; };
 		379D753A178786A600E288E2 /* Z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Z.png; sourceTree = "<group>"; };
 		379D7555178786AE00E288E2 /* Sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sprites.png; sourceTree = "<group>"; };
+		37D711CF178D3D9600DF32CC /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		37D711D0178D3D9600DF32CC /* buttonDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonDown.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1217,6 +1221,8 @@
 		379D750B17877AEE00E288E2 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				37D711CF178D3D9600DF32CC /* button.png */,
+				37D711D0178D3D9600DF32CC /* buttonDown.png */,
 				13895162178D02F9009DAF22 /* coin.png */,
 				137E0A811788BB3700C5358A /* BG.png */,
 				137E0A7F1788BB3000C5358A /* StoreBG.png */,
@@ -1398,6 +1404,8 @@
 				130A6826178CF9F100D93830 /* AppIcon_114.png in Resources */,
 				13800517178CFBBC00F93F5E /* SplashScreen.png in Resources */,
 				13895163178D02F9009DAF22 /* coin.png in Resources */,
+				37D711D1178D3D9600DF32CC /* button.png in Resources */,
+				37D711D2178D3D9600DF32CC /* buttonDown.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

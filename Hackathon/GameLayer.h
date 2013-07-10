@@ -14,15 +14,16 @@
 #import "HackBoard.h"
 #import "HackBoardView.h"
 
-
 #import "HackTray.h"
 
+#import "GameLogic.h"
 
 // HelloWorldLayer
 @interface GameLayer : CCLayer
 {
     HackBoard* myBoard;
     HackTray* myTray;
+    GameLogic* myLogic;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

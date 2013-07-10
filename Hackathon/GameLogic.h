@@ -13,9 +13,20 @@
 #import "HackLetter.h"
 #import "HackProjectile.h"
 
+@class GameLayer;
+
 @interface GameLogic : NSObject {
     NSInteger* gameState;
     HackBoard* gameBoard;
+    NSMutableArray* gameEnemies;
+    NSMutableArray* enemyPath;
+    
+    GameLayer*  myLayer;
+    NSArray*    boardPath;
+    
+    int enemiesToSpawn;
+    float spawnInterval;
+    float spawnTimer;
 }
 
 typedef enum gameStateType : NSInteger {
@@ -26,11 +37,25 @@ typedef enum gameStateType : NSInteger {
 
 @property NSInteger* gameState;
 @property HackBoard* gameBoard;
+@property NSMutableArray* gameEnemies;
+@property NSMutableArray* enemyPath;
+@property GameLayer* myLayer;
+@property NSArray* boardPath;
+
+@property int enemiesToSpawn;
+@property float spawnInterval;
+@property float spawnTimer;
 
 -(id)init;
 -(void)startGame;
 -(void)pauseGame;
 -(void)exitGame;
 -(void)finishGame;
+
+-(bool)attemptTransition;
+
+-(void)gameLoop:(ccTime)dT;
+
+-(void)spawnEnemy;
 
 @end

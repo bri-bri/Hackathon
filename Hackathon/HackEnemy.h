@@ -8,14 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+#import "cocos2d.h"
+
 @interface HackEnemy : NSObject {
     NSString* type;
     NSInteger* hp;
     NSNumber* speed;
+    
+    CCSprite* mySprite;
+    int pathInt;
 }
 
 @property NSString* type;
 @property NSInteger* hp;
 @property NSNumber* speed;
+@property  CCSprite* mySprite;
+@property int pathInt;
 
 @end

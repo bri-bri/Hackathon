@@ -10,4 +10,7 @@
 
 @implementation HackEnemy
 
+@synthesize mySprite;
+@synthesize pathInt;
+
 @end

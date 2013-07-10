@@ -19,7 +19,6 @@
     if(self)
     {
         scoreMultiplier = [NSNumber numberWithFloat:0.0f];
-        myGridCoord = nil;
         myHackLetter = [[HackLetter alloc] init];
     }
     

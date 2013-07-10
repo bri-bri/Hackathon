@@ -55,15 +55,37 @@
 		// add the label as a child to this Layer
 		[self addChild: background];
         
+        myLogic = [[GameLogic alloc] init];
+        myLogic.myLayer = self;
+        
         myBoard = [[HackBoard alloc] init];
         
         [myBoard setupBoard:self];
+        [myBoard testPath];
+        
+        myLogic.gameBoard = myBoard;
+        
+        //myLogic.boardPath = [myBoard getPath:myBoard.tiles sRow:0 sCol:0 eRow:9 eCol:9];
+        //[myLogic spawnEnemy];
+        
+        
         
         myTray = [[HackTray alloc] init];
         
         [myTray setupTray:self];
         
         [myTray fillHandLetters];
+        
+        //button for change gamestate
+        CCMenuItem *stateButton = [CCMenuItemImage
+                                    itemFromNormalImage:@"button.png" selectedImage:@"buttonDown.png"
+                                    target:self selector:@selector(stateButtonTapped:)];
+        stateButton.position = ccp(155, 40);
+        CCMenu *stateButtonMenu = [CCMenu menuWithItems:stateButton, nil];
+        stateButtonMenu.position = CGPointZero;
+        [self addChild:stateButtonMenu];
+        
+        [self schedule:@selector(gameLoop:) interval: 1/60.0f];
 	}
 	
 	return self;
@@ -73,5 +95,19 @@
 {
 	[super onEnter];
 	//[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+}
+
+- (void) gameLoop: (ccTime) dT
+{
+    // Do game logic here
+    [myLogic gameLoop:dT];
+}
+
+- (void) stateButtonTapped:(id)sender
+{
+    NSLog(@"Awesome");
+    bool didTransition = false;
+    
+    didTransition = [myLogic attemptTransition];
 }
 @end
