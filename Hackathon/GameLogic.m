@@ -15,6 +15,7 @@
 #import "HackTileCoord.h"
 #import "HackLetter.h"
 #import "HackProjectile.h"
+#import "HackSettings.h"
 
 #import "GameLayer.h"
 
@@ -22,6 +23,8 @@
 
 @synthesize myLayer;
 @synthesize boardPath;
+@synthesize gameBullets;
+@synthesize gameLetters;
 
 -(id)init {
     if( (self=[super init]) ) {
@@ -29,7 +32,18 @@
         gameBoard = nil;
         gameState = PREPARATION;
         gameEnemies = [[NSMutableArray alloc] initWithCapacity:10];
+        gameBullets = [[NSMutableArray alloc] init];
+        gameLetters = [[NSMutableArray alloc] init];
+        HackLetter *testLetter = [[HackLetter alloc] init];
+        testLetter.mySprite.visible = YES;
         
+        int xLoc = [_gameBoard getXLocFromGridX:0 gridWidth:30];
+        int yLoc = [_gameBoard getYLocFromGridY:0 gridHeight:30];
+        
+        testLetter.mySprite.position = ccp(xLoc,yLoc);
+        [gameLetters addObject:testLetter];
+        
+        [myLayer addChild:testLetter.mySprite];
         enemiesToSpawn = 0;
         spawnInterval = 1.5f;
         spawnTimer = 0.0f;
@@ -73,6 +87,14 @@
     gameState = PLAYING;
     
     return true;
+}
+
+-(BOOL)verifyWord:(NSString*)word
+{
+    if([[HackSettings sharedSettings].dictionary containsObject:word]){
+        return true;
+    }
+        return false;
 }
 
 -(void)gameLoop:(ccTime)dT
@@ -120,6 +142,55 @@
         }
         
     }
+    
+    //move bullets
+    
+    for(int i = [gameBullets count]-1; i >= 0; i--)
+    {
+        HackProjectile* blt = [gameBullets objectAtIndex:i];
+        float distToTarget = 0.0f;
+        float speed = blt.speed.floatValue * 10.0f;
+        float currentX = blt.mySprite.position.x;
+        float currentY = blt.mySprite.position.y;
+        float targetX = blt.finish.x;
+        float targetY = blt.finish.y;
+        if(currentX < targetX){
+            targetX = currentX + speed * dT;
+        } else {
+            targetX = currentX - speed * dT;
+        }
+        if(currentY < targetY){
+            targetY = currentY + speed * dT;
+        } else {
+            targetY = currentY - speed * dT;
+        }
+        
+        blt.mySprite.position = ccp(targetX,targetY);
+        
+        
+        if([blt atFinish]){
+            [blt removeAndCheckDamage];
+            [gameBullets removeObjectAtIndex:i];
+        }
+    }
+    
+    //create bullets
+    
+    /*
+    for(int i = [gameLetters count]; i >= 0; i--){
+       HackLetter *temp = [gameLetters objectAtIndex:i];
+    
+        if(tempLetter.shotTimer > 1000){
+            HackProjectile *newblt = [[HackProjectile alloc] initWithLetter:tempLetter andTarget:(HackEnemy*)[gameEnemies objectAtIndex:0]];
+            [gameBullets addObject:newblt];
+            [myLayer addChild:newblt.mySprite];
+           tempLetter.shotTimer = 0;
+       } else {
+           tempLetter.shotTimer += dT;
+       }
+    }
+     */
+    
     
     //detect for enemy deaths
     

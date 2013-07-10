@@ -20,10 +20,11 @@
     HackBoard* gameBoard;
     NSMutableArray* gameEnemies;
     NSMutableArray* enemyPath;
+    NSMutableArray* gameBullets;
+    NSMutableArray* gameLetters;
     
     GameLayer*  myLayer;
     NSArray*    boardPath;
-    
     int enemiesToSpawn;
     float spawnInterval;
     float spawnTimer;
@@ -39,6 +40,8 @@ typedef enum gameStateType : NSInteger {
 @property HackBoard* gameBoard;
 @property NSMutableArray* gameEnemies;
 @property NSMutableArray* enemyPath;
+@property NSMutableArray* gameBullets;
+@property NSMutableArray* gameLetters;
 @property GameLayer* myLayer;
 @property NSArray* boardPath;
 
@@ -53,6 +56,8 @@ typedef enum gameStateType : NSInteger {
 -(void)finishGame;
 
 -(bool)attemptTransition;
+
+-(BOOL)verifyWord:(NSString*)word;
 
 -(void)gameLoop:(ccTime)dT;
 
