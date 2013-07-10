@@ -129,6 +129,12 @@ CCLabelTTF *killsCount;
 -(void) onEnter
 {
 	[super onEnter];
+    NSLog(@"Entered GameLayer");
+    if([myLogic isPlayingState]){
+        [myTray emptyHandPowerUps];
+        [myTray fillHandPowerUps];
+        [myTray showHandPowerUps];
+    }
 	//[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
 }
 
@@ -177,6 +183,8 @@ CCLabelTTF *killsCount;
 
 -(void)transitionToPlayingState
 {
+    [myTray emptyHandPowerUps];
+    [myTray fillHandPowerUps];
     [myTray showHandPowerUps];
 }
 
