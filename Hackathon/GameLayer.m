@@ -49,7 +49,7 @@ CCLabelTTF *killsCount;
 		
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
 			//background = [CCSprite spriteWithFile:@"Default.png"];
-            background = [CCSprite spriteWithFile:@"texture_plaster_blue_color_background_160712_zeusbox_com-2560x1600.jpg"];
+            background = [CCSprite spriteWithFile:@"BG.png"];
 			background.rotation = 0;
 		} else {
 			background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
@@ -120,6 +120,10 @@ CCLabelTTF *killsCount;
         killsCount.position = ccp(anchorX+killsLabel.boundingBox.size.width*1.5,anchorY);
         [self addChild:killsLabel];
         [self addChild:killsCount];
+        
+        CCSprite *princess = [CCSprite spriteWithFile:@"PPPrincess.png"];
+        princess.position = ccp(300,180);
+        [self addChild:princess];
         
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 	}
@@ -359,6 +363,20 @@ CCLabelTTF *killsCount;
                 [tempSprite.parent removeChild:tempSprite];
                 [myTray.handPowerUpSprites removeObjectAtIndex:selSpriteIndex];
                 
+                NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
+                NSMutableDictionary *purchasedItems = [userData objectForKey:@"items"];
+                
+                NSDictionary *saveItem = purchasedItems[@"Prefix Power"][@"item"];
+                NSNumber *amount = purchasedItems[@"Prefix Power"][@"amount"];
+                
+                amount = [NSNumber numberWithInt:amount.intValue-1];
+                NSDictionary *theItem = [NSDictionary dictionaryWithObjects:@[amount,saveItem] forKeys:@[@"amount",@"item"]];
+                
+                if(amount.integerValue < 0){
+                    amount = [NSNumber numberWithInt:0];
+                }
+                [purchasedItems setValue:theItem forKey:@"Prefix Power"];
+                NSLog(@"%d items left",amount.integerValue);
                 selSprite = nil;
                 selSpriteIndex = -1;
                 

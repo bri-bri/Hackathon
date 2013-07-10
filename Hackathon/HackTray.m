@@ -178,7 +178,7 @@
             break;
         }
         NSDictionary *theItem = [items objectForKey:key];
-        if(theItem[@"amount"]>0){
+        if(((NSNumber*)theItem[@"amount"]).intValue>0){
             HackPowerUp* toAdd = [[HackPowerUp alloc] initWithItem:theItem[@"item"]];
             
             [handPowerUps addObject:toAdd];
