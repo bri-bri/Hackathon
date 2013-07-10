@@ -13,4 +13,8 @@
 @synthesize mySprite;
 @synthesize pathInt;
 
+-(void)takeDamage:(NSNumber *)damage
+{
+    
+}
 @end
