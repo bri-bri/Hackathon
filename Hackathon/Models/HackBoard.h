@@ -27,4 +27,7 @@
 -(float)getXLocFromGridX:(int)gridX gridWidth:(float)width;
 -(float)getYLocFromGridY:(int)gridY gridHeight:(float)height;
 
+-(int)getGridXFromXLoc:(int)xLoc gridWidth:(float)width;
+-(int)getGridYFromYLoc:(int)yLoc gridHeight:(float)height;
+
 @end

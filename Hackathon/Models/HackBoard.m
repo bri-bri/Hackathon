@@ -364,4 +364,22 @@
     return yLoc;
 }
 
+-(int)getGridXFromXLoc:(int)xLoc gridWidth:(float)width
+{
+    int gridX;
+    
+    gridX = (xLoc - 10) / (int)width;
+    
+    return gridX;
+}
+
+-(int)getGridYFromYLoc:(int)yLoc gridHeight:(float)height
+{
+    int gridY;
+    
+    gridY = (yLoc - 160) / (int)height;
+    
+    return gridY;
+}
+
 @end

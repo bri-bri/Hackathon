@@ -31,4 +31,6 @@
 
 -(void)randomizeLetter;
 
+-(id)initWithLetter:(NSString*)ltr;
+
 @end

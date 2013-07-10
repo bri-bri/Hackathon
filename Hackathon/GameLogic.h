@@ -52,7 +52,8 @@ typedef enum gameStateType : NSInteger {
 -(void)exitGame;
 -(void)finishGame;
 
--(bool)attemptTransition;
+-(bool)shouldAttemptTransition;
+-(bool)doTransition;
 
 -(void)gameLoop:(ccTime)dT;
 

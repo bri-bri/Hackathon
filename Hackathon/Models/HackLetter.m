@@ -13,6 +13,7 @@
 @implementation HackLetter
 
 @synthesize mySprite;
+@synthesize letter;
 
 -(id)init
 {
@@ -20,6 +21,18 @@
     if(self)
     {
         [self randomizeLetter];
+        [self setPropertiesBasedOnLetter];
+        boosts = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
+-(id)initWithLetter:(NSString*)ltr
+{
+    self = [super init];
+    if(self)
+    {
+        letter = ltr;
         [self setPropertiesBasedOnLetter];
         boosts = [[NSMutableDictionary alloc] init];
     }

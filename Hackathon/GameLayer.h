@@ -24,9 +24,23 @@
     HackBoard* myBoard;
     HackTray* myTray;
     GameLogic* myLogic;
+    
+    CCSprite* selSprite;
+    int         selSpriteIndex;
+    float       oldX;
+    float       oldY;
+    
+    NSMutableArray* possibleWord;
+    NSMutableArray* takenIndexes;
+    NSMutableArray* takenGridCoords;
+    NSMutableArray* gameLetters;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
+
+-(void)transitionToPreparationState;
+
+-(void)transitionToPlayingState;
 
 @end

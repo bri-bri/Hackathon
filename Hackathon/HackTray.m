@@ -18,6 +18,9 @@
 
 @implementation HackTray
 
+@synthesize handLetters;
+@synthesize handLetterSprites;
+
 -(id)init
 {
     self = [super init];

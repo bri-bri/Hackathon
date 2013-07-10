@@ -50,12 +50,18 @@
     
 }
 
--(bool)attemptTransition
+-(bool)shouldAttemptTransition
 {
     if(gameState == PLAYING)
     {
         return false;
     }
+    return true;
+}
+
+-(bool)doTransition
+{
+    
     //test if there's a valid path
     
     boardPath = [_gameBoard getPath:_gameBoard.tiles sRow:0 sCol:0 eRow:9 eCol:9];
@@ -71,6 +77,8 @@
     enemiesToSpawn = 5;
     
     gameState = PLAYING;
+    
+    [myLayer transitionToPlayingState];
     
     return true;
 }
@@ -145,6 +153,7 @@
     {
         gameState = PREPARATION;
         spawnTimer = 0.0f;
+        [myLayer transitionToPreparationState];
     }
 }
 
